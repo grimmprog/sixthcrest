@@ -161,17 +161,27 @@ window.toggleMobileMenu = function(e) {
   if (e) e.stopPropagation();
   const navLinks = document.getElementById("nav-links");
   const menuBtn = document.getElementById("mobile-menu-btn");
+  let overlay = document.getElementById("nav-drawer-overlay");
+
+  if (!overlay) {
+    overlay = document.createElement("div");
+    overlay.id = "nav-drawer-overlay";
+    overlay.className = "nav-drawer-overlay";
+    overlay.onclick = function(evt) { window.toggleMobileMenu(evt); };
+    document.body.appendChild(overlay);
+  }
 
   if (navLinks) {
-    navLinks.classList.toggle("active");
+    const isActive = navLinks.classList.toggle("active");
+    if (overlay) {
+      if (isActive) overlay.classList.add("active");
+      else overlay.classList.remove("active");
+    }
+
     if (menuBtn) {
       const icon = menuBtn.querySelector("i");
       if (icon) {
-        if (navLinks.classList.contains("active")) {
-          icon.className = "fa-solid fa-xmark";
-        } else {
-          icon.className = "fa-solid fa-bars";
-        }
+        icon.className = isActive ? "fa-solid fa-xmark" : "fa-solid fa-bars";
       }
     }
   }
@@ -185,20 +195,13 @@ function initMobileMenu() {
     menuBtn.onclick = (e) => window.toggleMobileMenu(e);
   }
 
-  // Close menu when clicking outside
-  document.addEventListener("click", (e) => {
-    if (navLinks && menuBtn && !menuBtn.contains(e.target) && !navLinks.contains(e.target)) {
-      navLinks.classList.remove("active");
-      const icon = menuBtn.querySelector("i");
-      if (icon) icon.className = "fa-solid fa-bars";
-    }
-  });
-
   // Close menu when clicking any nav link inside drawer
   if (navLinks) {
     navLinks.querySelectorAll("a").forEach((link) => {
       link.addEventListener("click", () => {
         navLinks.classList.remove("active");
+        const overlay = document.getElementById("nav-drawer-overlay");
+        if (overlay) overlay.classList.remove("active");
         if (menuBtn) {
           const icon = menuBtn.querySelector("i");
           if (icon) icon.className = "fa-solid fa-bars";
