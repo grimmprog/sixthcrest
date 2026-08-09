@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SixthCrest | Shopify Development, Custom Web Apps, SEO & Online Ads Agency</title>
+  <meta name="description" content="SixthCrest is a premier digital agency building high-converting Shopify stores, custom SaaS web apps, rank-dominating SEO campaigns, and ROI-driven online ads marketing.">
+  <meta name="keywords" content="Shopify Development, Custom Website Building, SEO Agency, Digital Marketing, Online Ads, RxDoctor, Uptime Bunny, GoRoomz, Politico Fit, Bananaz">
+
+  <!-- OpenGraph / Social Media Meta -->
+  <meta property="og:title" content="SixthCrest | Scale Your Brand & Build Scalable Web Products">
+  <meta property="og:description" content="From high-converting Shopify e-commerce to full-stack SaaS apps like RxDoctor and Uptime Bunny. Get a free audit and estimate today.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://sixthcrest.com">
+
+  <!-- Fonts & FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ==========================================================================
+       HEADER & NAVIGATION
+       ========================================================================== -->
+  <header class="navbar" id="navbar">
+    <div class="container navbar-inner">
+      <a href="#hero" class="brand-logo">
+        <span class="logo-icon">6</span>
+        <span>SixthCrest</span>
+      </a>
+
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#estimator">Cost Estimator</a></li>
+        <li><a href="articles.html">Articles & Insights</a></li>
+        <li><a href="#about">Why Us</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="admin.html" target="_blank" class="admin-nav-link"><i class="fa-solid fa-lock"></i> Admin</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <!-- Location / Currency Switcher -->
+        <div class="currency-selector-wrapper">
+          <select id="currency-select" class="currency-select" onchange="changeCurrency(this.value)" aria-label="Select Currency">
+            <option value="USD">🇺🇸 USD ($)</option>
+            <option value="INR">🇮🇳 INR (₹)</option>
+            <option value="EUR">🇪🇺 EUR (€)</option>
+            <option value="GBP">🇬🇧 GBP (£)</option>
+          </select>
+        </div>
+
+        <button class="theme-toggle-btn" id="theme-toggle-btn" aria-label="Toggle Dark/Light Mode">
+          <i class="fa-solid fa-moon" id="theme-icon"></i>
+        </button>
+
+        <a href="#contact" class="btn btn-primary">
+          <i class="fa-solid fa-paper-plane"></i>
+          <span>Get Free Audit</span>
+        </a>
+
+        <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Open Navigation Menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ==========================================================================
+         HERO SECTION
+         ========================================================================== -->
+    <section class="hero-section" id="hero">
+      <div class="container">
+        <div class="badge-pill">
+          <span class="pulse-dot"></span>
+          <span>Engineering High-Growth Digital Experiences</span>
+        </div>
+
+        <h1 class="hero-title">
+          We Build High-Converting <span class="text-gradient">Shopify Stores</span> & Scalable <span class="text-gradient">Web Apps</span>
+        </h1>
+
+        <p class="hero-subtitle">
+          SixthCrest helps ambitious brands scale through custom web application development, expert Shopify store optimization, rank-dominating SEO, and ROI-focused Meta & Google Ads campaigns.
+        </p>
+
+        <div class="hero-cta-group">
+          <a href="#estimator" class="btn btn-primary btn-lg">
+            <i class="fa-solid fa-calculator"></i>
+            <span>Calculate Project Estimate</span>
+          </a>
+          <a href="#portfolio" class="btn btn-secondary btn-lg">
+            <i class="fa-solid fa-eye"></i>
+            <span>Explore Flagship Projects</span>
+          </a>
+        </div>
+
+        <!-- Live Agency Metrics Ticker -->
+        <div class="metrics-ticker">
+          <div class="metric-item">
+            <div class="metric-number text-gradient" data-target="5">5+</div>
+            <div class="metric-label">Flagship SaaS Products</div>
+          </div>
+          <div class="metric-item">
+            <div class="metric-number text-gradient" data-target="99.9">99.9%</div>
+            <div class="metric-label">Infrastructure Uptime</div>
+          </div>
+          <div class="metric-item">
+            <div class="metric-number text-gradient" data-target="100">100k+</div>
+            <div class="metric-label">Active Users Served</div>
+          </div>
+          <div class="metric-item">
+            <div class="metric-number text-gradient" data-target="4.8">4.8x</div>
+            <div class="metric-label">Avg. Client ROAS Growth</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ==========================================================================
+         SERVICES SECTION
+         ========================================================================== -->
+    <section class="section" id="services">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-subtitle">What We Do Best</span>
+          <h2 class="section-title">Core Services Engineered For Growth</h2>
+          <p class="section-desc">From initial architectural blueprinting to full-funnel digital marketing, we deliver end-to-end technology and revenue solutions.</p>
+        </div>
+
+        <div class="services-grid">
+          <!-- Service Card 1 -->
+          <div class="service-card">
+            <div class="service-icon-wrapper">
+              <i class="fa-solid fa-bag-shopping"></i>
+            </div>
+            <h3 class="service-title">Shopify Development & CRO</h3>
+            <p class="service-description">Custom theme buildouts, high-speed Liquid programming, seamless headless commerce, and conversion rate optimization that turns visitors into buyers.</p>
+            <ul class="service-features-list">
+              <li><i class="fa-solid fa-check-circle"></i> Custom Liquid Theme Engineering</li>
+              <li><i class="fa-solid fa-check-circle"></i> Checkout & Cart Conversion Rate Optimization</li>
+              <li><i class="fa-solid fa-check-circle"></i> 90+ Mobile Core Web Vitals Speed</li>
+              <li><i class="fa-solid fa-check-circle"></i> Custom App & Payment Gateway Integrations</li>
+            </ul>
+            <a href="#contact" class="btn btn-secondary" onclick="preselectService('shopify')">Request Shopify Quote</a>
+          </div>
+
+          <!-- Service Card 2 -->
+          <div class="service-card">
+            <div class="service-icon-wrapper">
+              <i class="fa-solid fa-code"></i>
+            </div>
+            <h3 class="service-title">Custom Website & SaaS Building</h3>
+            <p class="service-description">Full-stack web application development built with React, Node.js, and Python. We craft robust SaaS platforms, booking engines, and custom dashboards.</p>
+            <ul class="service-features-list">
+              <li><i class="fa-solid fa-check-circle"></i> React & Node.js Scalable Architecture</li>
+              <li><i class="fa-solid fa-check-circle"></i> SaaS Platforms & Administrative Dashboards</li>
+              <li><i class="fa-solid fa-check-circle"></i> RESTful API & Real-time WebSockets</li>
+              <li><i class="fa-solid fa-check-circle"></i> Cloud Deployment & Database Tuning</li>
+            </ul>
+            <a href="#contact" class="btn btn-secondary" onclick="preselectService('webapp')">Request Web App Quote</a>
+          </div>
+
+          <!-- Service Card 3 -->
+          <div class="service-card">
+            <div class="service-icon-wrapper">
+              <i class="fa-solid fa-chart-line"></i>
+            </div>
+            <h3 class="service-title">Search Engine Optimization (SEO)</h3>
+            <p class="service-description">Dominate organic search rankings with data-driven technical SEO audits, high-intent keyword strategies, structured schema, and content authority building.</p>
+            <ul class="service-features-list">
+              <li><i class="fa-solid fa-check-circle"></i> Comprehensive Technical SEO Audits</li>
+              <li><i class="fa-solid fa-check-circle"></i> E-commerce & Local SEO Optimization</li>
+              <li><i class="fa-solid fa-check-circle"></i> Page Speed & Core Web Vitals Optimization</li>
+              <li><i class="fa-solid fa-check-circle"></i> Authority Link & Schema Implementation</li>
+            </ul>
+            <a href="#contact" class="btn btn-secondary" onclick="preselectService('seo')">Request Audit & SEO Quote</a>
+          </div>
+
+          <!-- Service Card 4 -->
+          <div class="service-card">
+            <div class="service-icon-wrapper">
+              <i class="fa-solid fa-bullhorn"></i>
+            </div>
+            <h3 class="service-title">Online Ads & Digital Marketing</h3>
+            <p class="service-description">Data-driven Meta Ads (Facebook/Instagram) and Google Search/Shopping campaigns designed to maximize Return on Ad Spend (ROAS) and lower acquisition costs.</p>
+            <ul class="service-features-list">
+              <li><i class="fa-solid fa-check-circle"></i> Meta (FB/IG) High-Converting Ad Creative</li>
+              <li><i class="fa-solid fa-check-circle"></i> Google PPC & High-Intent Shopping Ads</li>
+              <li><i class="fa-solid fa-check-circle"></i> Audience Segmentation & Retargeting Funnels</li>
+              <li><i class="fa-solid fa-check-circle"></i> Multi-Touch Attribution & Analytics Setup</li>
+            </ul>
+            <a href="#contact" class="btn btn-secondary" onclick="preselectService('ads')">Request Marketing Plan</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ==========================================================================
+         PORTFOLIO SHOWCASE SECTION
+         ========================================================================== -->
+    <section class="section" id="portfolio">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-subtitle">Proven Track Record</span>
+          <h2 class="section-title">Our Flagship Projects & Client Case Studies</h2>
+          <p class="section-desc">Explore the live products engineered, scaled, and managed under the SixthCrest umbrella.</p>
+        </div>
+
+        <!-- Filter Bar -->
+        <div class="portfolio-filter-bar">
+          <button class="filter-btn active" data-filter="all">All Projects</button>
+          <button class="filter-btn" data-filter="saas">SaaS & Web Apps</button>
+          <button class="filter-btn" data-filter="shopify">Shopify & E-Commerce</button>
+          <button class="filter-btn" data-filter="platform">Marketplace & Platforms</button>
+        </div>
+
+        <div class="portfolio-grid">
+
+          <!-- Project 1: RxDoctor -->
+          <div class="project-card" data-category="saas">
+            <div class="project-thumbnail-wrapper">
+              <img src="assets/rxdoctor.png" alt="RxDoctor SaaS Platform UI">
+              <span class="project-category-badge">Healthcare SaaS</span>
+            </div>
+            <div class="project-body">
+              <div class="project-domain">rxdoctor.in / app.rxdoctor.in</div>
+              <h3 class="project-title">RxDoctor - Clinic Management SaaS</h3>
+              <p class="project-description">All-in-one digital health management platform featuring EMR records, e-prescriptions, appointment booking, OPD queues, and symptom diagnostic tool.</p>
+              <div class="project-highlights">
+                <span class="highlight-tag">React / Node.js</span>
+                <span class="highlight-tag">10,000+ OPD Records</span>
+                <span class="highlight-tag">HIPAA Compliant</span>
+              </div>
+              <div class="project-actions">
+                <button class="btn-case-study" onclick="openProjectModal('rxdoctor')">
+                  <span>View Case Study</span>
+                  <i class="fa-solid fa-arrow-right"></i>
+                </button>
+                <a href="https://rxdoctor.in" target="_blank" rel="noopener" class="project-link">
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i> Visit Site
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 2: Uptime Bunny -->
+          <div class="project-card" data-category="saas">
+            <div class="project-thumbnail-wrapper">
+              <img src="assets/uptimebunny.png" alt="Uptime Bunny SaaS Monitoring Dashboard">
+              <span class="project-category-badge">Monitoring SaaS</span>
+            </div>
+            <div class="project-body">
+              <div class="project-domain">uptimebunny.com</div>
+              <h3 class="project-title">Uptime Bunny - Server & API Monitor</h3>
+              <p class="project-description">High-frequency website, port, SSL, and API monitoring engine with real-time incident alerting via Telegram, Email, and status page hosting.</p>
+              <div class="project-highlights">
+                <span class="highlight-tag">99.99% Precision</span>
+                <span class="highlight-tag">Telegram & SSL Alerts</span>
+                <span class="highlight-tag">Global Ping Nodes</span>
+              </div>
+              <div class="project-actions">
+                <button class="btn-case-study" onclick="openProjectModal('uptimebunny')">
+                  <span>View Case Study</span>
+                  <i class="fa-solid fa-arrow-right"></i>
+                </button>
+                <a href="https://uptimebunny.com" target="_blank" rel="noopener" class="project-link">
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i> Visit Site
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 3: GoRoomz -->
+          <div class="project-card" data-category="platform">
+            <div class="project-thumbnail-wrapper">
+              <img src="assets/goroomz.png" alt="GoRoomz Accommodation Booking Portal">
+              <span class="project-category-badge">Booking Platform</span>
+            </div>
+            <div class="project-body">
+              <div class="project-domain">goroomz.in</div>
+              <h3 class="project-title">GoRoomz - Hostel & Accommodation Portal</h3>
+              <p class="project-description">Dynamic accommodation marketplace connecting room seekers with verified PG and hostel owners featuring interactive location filters and direct contact.</p>
+              <div class="project-highlights">
+                <span class="highlight-tag">Direct Host Connect</span>
+                <span class="highlight-tag">Map Search UI</span>
+                <span class="highlight-tag">Zero Brokerage</span>
+              </div>
+              <div class="project-actions">
+                <button class="btn-case-study" onclick="openProjectModal('goroomz')">
+                  <span>View Case Study</span>
+                  <i class="fa-solid fa-arrow-right"></i>
+                </button>
+                <a href="https://goroomz.in" target="_blank" rel="noopener" class="project-link">
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i> Visit Site
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 4: Politico Fit -->
+          <div class="project-card" data-category="shopify">
+            <div class="project-thumbnail-wrapper">
+              <img src="assets/politico_fit.png" alt="Politico Fit Luxury Fashion E-commerce">
+              <span class="project-category-badge">Shopify E-Commerce</span>
+            </div>
+            <div class="project-body">
+              <div class="project-domain">politico.fit</div>
+              <h3 class="project-title">Politico Fit - Luxury Designer Storefront</h3>
+              <p class="project-description">Bespoke luxury menswear e-commerce store with exotic fabric showcases, custom measurement selector, high-speed cart checkout, and refined typography.</p>
+              <div class="project-highlights">
+                <span class="highlight-tag">Shopify Liquid Theme</span>
+                <span class="highlight-tag">+42% CRO Boost</span>
+                <span class="highlight-tag">Luxury Brand Aesthetics</span>
+              </div>
+              <div class="project-actions">
+                <button class="btn-case-study" onclick="openProjectModal('politicofit')">
+                  <span>View Case Study</span>
+                  <i class="fa-solid fa-arrow-right"></i>
+                </button>
+                <a href="https://politico.fit" target="_blank" rel="noopener" class="project-link">
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i> Visit Site
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 5: Bananaz -->
+          <div class="project-card" data-category="shopify">
+            <div class="project-thumbnail-wrapper">
+              <img src="assets/bananaz.png" alt="Bananaz Banana Fibre Eco Luxury Fashion">
+              <span class="project-category-badge">Eco Luxury E-Commerce</span>
+            </div>
+            <div class="project-body">
+              <div class="project-domain">bananaz.in</div>
+              <h3 class="project-title">Bananaz - Organic Banana Fibre Luxury Fashion</h3>
+              <p class="project-description">Sustainable luxury fashion brand crafting high-end designer garments, organic apparel, and luxury accessories made from natural banana fibre.</p>
+              <div class="project-highlights">
+                <span class="highlight-tag">Banana Fibre Apparel</span>
+                <span class="highlight-tag">Eco-Luxury Fashion</span>
+                <span class="highlight-tag">Shopify E-Commerce</span>
+              </div>
+              <div class="project-actions">
+                <button class="btn-case-study" onclick="openProjectModal('bananaz')">
+                  <span>View Case Study</span>
+                  <i class="fa-solid fa-arrow-right"></i>
+                </button>
+                <a href="https://bananaz.in" target="_blank" rel="noopener" class="project-link">
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i> Visit Site
+                </a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ==========================================================================
+         360° SHOPIFY E-COMMERCE GROWTH LIFECYCLE SECTION
+         ========================================================================== -->
+    <section class="section" id="lifecycle">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-subtitle">End-To-End Growth Blueprint</span>
+          <h2 class="section-title">The Complete 360° Shopify Brand Lifecycle</h2>
+          <p class="section-desc">From initial market analysis and studio content creation to Shopify store engineering, Google ecosystem setup, and AI social marketing.</p>
+        </div>
+
+        <div class="lifecycle-grid">
+          <!-- Phase 1 -->
+          <div class="lifecycle-card">
+            <span class="step-badge">01</span>
+            <div class="lifecycle-icon"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
+            <h3 class="lifecycle-title">Market Analysis & Product Strategy</h3>
+            <p class="lifecycle-desc">Deep competitor benchmarking, target audience profiling, positioning, and product design consultation for new or existing inventory lines.</p>
+            <div class="deliverables-tag-list">
+              <span class="deliverable-tag">Competitor Audit</span>
+              <span class="deliverable-tag">Pricing Analysis</span>
+              <span class="deliverable-tag">Product Design Support</span>
+            </div>
+          </div>
+
+          <!-- Phase 2 -->
+          <div class="lifecycle-card">
+            <span class="step-badge">02</span>
+            <div class="lifecycle-icon"><i class="fa-solid fa-camera-retro"></i></div>
+            <h3 class="lifecycle-title">Content Creation & Studio Media</h3>
+            <p class="lifecycle-desc">In-house studio product photography, 4K video shoots, Instagram Reels, TikTok shorts, and AI-enhanced visual asset generation for high-impact storytelling.</p>
+            <div class="deliverables-tag-list">
+              <span class="deliverable-tag">Studio Product Photography</span>
+              <span class="deliverable-tag">4K Video Shoots</span>
+              <span class="deliverable-tag">Instagram Reels</span>
+              <span class="deliverable-tag">AI Visual Engine</span>
+            </div>
+          </div>
+
+          <!-- Phase 3 -->
+          <div class="lifecycle-card">
+            <span class="step-badge">03</span>
+            <div class="lifecycle-icon"><i class="fa-solid fa-shop"></i></div>
+            <h3 class="lifecycle-title">Custom Shopify Store Build & CRO</h3>
+            <p class="lifecycle-desc">Bespoke Liquid OS 2.0 theme development, checkout CRO, sub-second mobile load speeds, and payment gateway setup.</p>
+            <div class="deliverables-tag-list">
+              <span class="deliverable-tag">Custom Liquid Theme</span>
+              <span class="deliverable-tag">Core Web Vitals 95+</span>
+              <span class="deliverable-tag">Checkout CRO</span>
+            </div>
+          </div>
+
+          <!-- Phase 4 -->
+          <div class="lifecycle-card">
+            <span class="step-badge">04</span>
+            <div class="lifecycle-icon"><i class="fa-brands fa-google"></i></div>
+            <h3 class="lifecycle-title">Google Ecosystem Dominance</h3>
+            <p class="lifecycle-desc">Complete setup and optimization for Google My Business (GMB), Google Analytics 4 (GA4) e-commerce tracking, Search Console, and Merchant Center product feed sync.</p>
+            <div class="deliverables-tag-list">
+              <span class="deliverable-tag">Google My Business (GMB)</span>
+              <span class="deliverable-tag">GA4 E-Commerce Tracking</span>
+              <span class="deliverable-tag">Merchant Center Sync</span>
+            </div>
+          </div>
+
+          <!-- Phase 5 -->
+          <div class="lifecycle-card">
+            <span class="step-badge">05</span>
+            <div class="lifecycle-icon"><i class="fa-solid fa-bullseye"></i></div>
+            <h3 class="lifecycle-title">Performance Paid Ads Funnels</h3>
+            <p class="lifecycle-desc">ROAS-focused Google PPC Search & Shopping campaigns, Meta (FB/IG) ad funnels, retargeting sequences, and creative A/B testing.</p>
+            <div class="deliverables-tag-list">
+              <span class="deliverable-tag">Google PPC & Shopping</span>
+              <span class="deliverable-tag">Meta Ads (FB/IG)</span>
+              <span class="deliverable-tag">Retargeting Funnels</span>
+            </div>
+          </div>
+
+          <!-- Phase 6 -->
+          <div class="lifecycle-card">
+            <span class="step-badge">06</span>
+            <div class="lifecycle-icon"><i class="fa-brands fa-instagram"></i></div>
+            <h3 class="lifecycle-title">Organic Social & AI Growth Engine</h3>
+            <p class="lifecycle-desc">Ongoing Instagram and social media growth powered by in-house photographers, video creators, and generative AI content workflows.</p>
+            <div class="deliverables-tag-list">
+              <span class="deliverable-tag">Instagram Growth</span>
+              <span class="deliverable-tag">Daily Media Posts</span>
+              <span class="deliverable-tag">AI Content Workflows</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ==========================================================================
+         TRANSPARENT SERVICE PRICING PACKAGES
+         ========================================================================== -->
+    <section class="section" id="pricing-packages">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-subtitle">Predictable Service Pricing</span>
+          <h2 class="section-title">Shopify Growth Packages</h2>
+          <p class="section-desc">Transparent agency service fees with zero hidden costs.</p>
+        </div>
+
+        <div class="packages-grid">
+          <!-- Starter Package -->
+          <div class="package-card">
+            <div>
+              <h3 class="package-name">Starter Store Launch</h3>
+              <p style="color: var(--text-muted); font-size: 0.88rem;">Ideal for single-product stores or brands launching their initial Shopify baseline.</p>
+              <div class="package-price" id="pkg-price-starter">$2,500</div>
+              <div class="package-price-sub">One-time Agency Service Fee</div>
+
+              <ul class="package-features">
+                <li><i class="fa-solid fa-check-circle"></i> Market & Competitor Audit</li>
+                <li><i class="fa-solid fa-check-circle"></i> Custom Shopify OS 2.0 Theme Build</li>
+                <li><i class="fa-solid fa-check-circle"></i> Basic Product Photography (Up to 10 SKUs)</li>
+                <li><i class="fa-solid fa-check-circle"></i> GA4 & Google Search Console Setup</li>
+                <li><i class="fa-solid fa-check-circle"></i> Core Web Vitals Speed Optimization</li>
+              </ul>
+            </div>
+            <a href="#contact" class="btn btn-secondary" onclick="preselectService('shopify')">Choose Starter Package</a>
+          </div>
+
+          <!-- Growth Lifecycle (Recommended) -->
+          <div class="package-card recommended">
+            <span class="package-ribbon">Most Popular</span>
+            <div>
+              <h3 class="package-name">360° Growth Lifecycle</h3>
+              <p style="color: var(--text-muted); font-size: 0.88rem;">End-to-end launch: research, media production, custom Shopify store, and Google/Meta ad funnels.</p>
+              <div class="package-price text-gradient" id="pkg-price-growth">$4,800</div>
+              <div class="package-price-sub">Full Lifecycle Implementation</div>
+
+              <ul class="package-features">
+                <li><i class="fa-solid fa-check-circle"></i> Everything in Starter Package</li>
+                <li><i class="fa-solid fa-check-circle"></i> Studio Photography + 4K Video Shoots + Reels</li>
+                <li><i class="fa-solid fa-check-circle"></i> AI-Enhanced Product Content Engine</li>
+                <li><i class="fa-solid fa-check-circle"></i> Google My Business (GMB) & Merchant Sync</li>
+                <li><i class="fa-solid fa-check-circle"></i> Meta & Google Ads Performance Funnel Setup</li>
+                <li><i class="fa-solid fa-check-circle"></i> Multi-Currency Payment Gateway Integration</li>
+              </ul>
+            </div>
+            <a href="#contact" class="btn btn-primary" onclick="preselectService('all')">Choose 360° Growth Package</a>
+          </div>
+
+          <!-- Enterprise Retainer -->
+          <div class="package-card">
+            <div>
+              <h3 class="package-name">360° Enterprise Retainer</h3>
+              <p style="color: var(--text-muted); font-size: 0.88rem;">Ongoing monthly partner management for high-volume brands scaling aggressively.</p>
+              <div class="package-price" id="pkg-price-enterprise">$8,500<span style="font-size: 1rem; font-weight: 500;">/mo</span></div>
+              <div class="package-price-sub">Monthly Full-Service Retainer</div>
+
+              <ul class="package-features">
+                <li><i class="fa-solid fa-check-circle"></i> Everything in Growth Lifecycle</li>
+                <li><i class="fa-solid fa-check-circle"></i> Monthly Studio Photography & Reel Production</li>
+                <li><i class="fa-solid fa-check-circle"></i> Daily Instagram Content Management</li>
+                <li><i class="fa-solid fa-check-circle"></i> Continuous Google & Meta Ad Optimization</li>
+                <li><i class="fa-solid fa-check-circle"></i> Agentic Commerce & AEO Custom Integrations</li>
+                <li><i class="fa-solid fa-check-circle"></i> Dedicated Slack Channel & Weekly Growth Calls</li>
+              </ul>
+            </div>
+            <a href="#contact" class="btn btn-secondary" onclick="preselectService('all')">Choose Enterprise Retainer</a>
+          </div>
+        </div>
+
+        <!-- EXCLUSION DISCLAIMER BOX -->
+        <div class="pricing-disclaimer-box">
+          <i class="fa-solid fa-circle-info" style="color: var(--accent-secondary); margin-right: 0.4rem;"></i>
+          <strong>Transparent Billing Disclaimer:</strong> Agency package fees listed above cover SixthCrest professional services (research, photography/video shoots, Shopify development, SEO, and ad funnel engineering). Prices <u>exclude</u> third-party Shopify monthly subscription plans, domain name registration, and direct third-party ad spend paid to Google/Meta.
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ==========================================================================
+         INTERACTIVE PROJECT ESTIMATOR (QUOTE CALCULATOR)
+         ========================================================================== -->
+    <section class="section" id="estimator">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-subtitle">Instant Transparency</span>
+          <h2 class="section-title">Interactive Project Cost Estimator</h2>
+          <p class="section-desc">Select the services and scale you need to calculate an instant budget estimation for your next project.</p>
+        </div>
+
+        <div class="calculator-card">
+          <div class="calc-grid">
+            <div class="calc-inputs-column">
+              
+              <h4 class="calc-options-title">1. Select Target Services:</h4>
+              <div class="service-selector-grid">
+                <label class="calc-checkbox-card selected" id="card-calc-shopify">
+                  <input type="checkbox" id="calc-shopify" value="1200" checked onchange="calculateEstimate()">
+                  <div class="calc-option-info">
+                    <h5>Shopify Store / CRO</h5>
+                    <p>Custom Liquid Theme & Optimization</p>
+                  </div>
+                </label>
+
+                <label class="calc-checkbox-card" id="card-calc-webapp">
+                  <input type="checkbox" id="calc-webapp" value="2000" onchange="calculateEstimate()">
+                  <div class="calc-option-info">
+                    <h5>Custom Web App / SaaS</h5>
+                    <p>React/Node Full-Stack Build</p>
+                  </div>
+                </label>
+
+                <label class="calc-checkbox-card" id="card-calc-seo">
+                  <input type="checkbox" id="calc-seo" value="800" onchange="calculateEstimate()">
+                  <div class="calc-option-info">
+                    <h5>Advanced SEO Audit</h5>
+                    <p>Rank Dominance & Speed Optimization</p>
+                  </div>
+                </label>
+
+                <label class="calc-checkbox-card" id="card-calc-ads">
+                  <input type="checkbox" id="calc-ads" value="1000" onchange="calculateEstimate()">
+                  <div class="calc-option-info">
+                    <h5>Meta & Google Ads</h5>
+                    <p>Ad Campaigns & Funnel Setup</p>
+                  </div>
+                </label>
+              </div>
+
+              <h4 class="calc-options-title">2. Select Project Scope & Complexity:</h4>
+              <div class="calc-scope-select">
+                <div class="range-slider-group">
+                  <input type="range" min="1" max="3" step="1" value="2" class="form-control" id="scope-slider" oninput="calculateEstimate()">
+                  <div class="slider-labels">
+                    <span>Starter / MVP</span>
+                    <span>Growth / Custom (Recommended)</span>
+                    <span>Enterprise Scale</span>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Output Box -->
+            <div class="calc-output-box">
+              <div>
+                <div class="estimate-title">Estimated Investment</div>
+                <div class="estimate-price" id="estimate-price-display">$1,800 - $2,500</div>
+                <div class="estimate-timeline" id="estimate-timeline-display"><i class="fa-solid fa-clock"></i> Estimated Delivery: 2 - 3 Weeks</div>
+              </div>
+
+              <ul class="estimate-breakdown-list" id="estimate-breakdown-list">
+                <li><span>Selected Services:</span><span id="breakdown-service-count">1 Service</span></li>
+                <li><span>Project Complexity:</span><span id="breakdown-scope-level">Growth Level</span></li>
+                <li><span>Support & Warranty:</span><span>30-Day Included</span></li>
+              </ul>
+
+              <button class="btn btn-primary" onclick="applyEstimateToForm()">
+                <i class="fa-solid fa-check"></i> Lock In Estimate & Inquire
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ==========================================================================
+         WHY CHOOSE SIXTHCREST (ABOUT)
+         ========================================================================== -->
+    <section class="section" id="about">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-subtitle">Why Partner With SixthCrest</span>
+          <h2 class="section-title">We Don't Just Build Websites — We Engineer Market Winners</h2>
+          <p class="section-desc">Unlike traditional agencies that only deliver static designs, we build, launch, and operate our own high-traffic products.</p>
+        </div>
+
+        <div class="services-grid">
+          <div class="service-card">
+            <div class="service-icon-wrapper"><i class="fa-solid fa-rocket"></i></div>
+            <h3 class="service-title">In-House Product Expertise</h3>
+            <p class="service-description">We apply the exact same high-performance standards used in RxDoctor and Uptime Bunny to your client project.</p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon-wrapper"><i class="fa-solid fa-gauge-high"></i></div>
+            <h3 class="service-title">Lightning Speed & SEO Core</h3>
+            <p class="service-description">Every site we build achieves 90+ Lighthouse performance scores, ensuring instant loads and high search engine rankings.</p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon-wrapper"><i class="fa-solid fa-funnel-dollar"></i></div>
+            <h3 class="service-title">ROI-Driven Marketing</h3>
+            <p class="service-description">We align website design with ad campaigns so every visitor has a clear path to conversion, lowering your CAC.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ==========================================================================
+         CONTACT & LEAD ACQUISITION FORM
+         ========================================================================== -->
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="contact-grid">
+          
+          <div class="contact-info-card">
+            <div>
+              <span class="section-subtitle">Ready To Elevate Your Brand?</span>
+              <h2 class="section-title">Let's Discuss Your Next Big Project</h2>
+              <p class="section-desc">Whether you need a high-converting Shopify store, a full-stack SaaS platform, rank-boosting SEO, or ROI ads marketing — our team is ready.</p>
+            </div>
+
+            <ul class="contact-perks-list">
+              <li class="contact-perk-item">
+                <i class="fa-solid fa-bolt"></i>
+                <div>
+                  <h5>Fast 24-Hour Proposal Turnaround</h5>
+                  <p>Receive a detailed roadmap and estimate within 1 business day.</p>
+                </div>
+              </li>
+              <li class="contact-perk-item">
+                <i class="fa-solid fa-shield-halved"></i>
+                <div>
+                  <h5>Full Source Code & Data Ownership</h5>
+                  <p>100% ownership of all repository code, assets, and ad accounts.</p>
+                </div>
+              </li>
+              <li class="contact-perk-item">
+                <i class="fa-solid fa-headset"></i>
+                <div>
+                  <h5>Dedicated Project Manager</h5>
+                  <p>Direct communication via Slack, WhatsApp, and weekly updates.</p>
+                </div>
+              </li>
+            </ul>
+
+            <div>
+              <p style="font-size: 0.85rem; color: var(--text-muted);">Direct Contact Info:</p>
+              <h4 style="font-size: 1.1rem; color: var(--text-main); margin-top: 0.25rem;">
+                <i class="fa-solid fa-envelope text-gradient"></i> hello@sixthcrest.com
+              </h4>
+            </div>
+          </div>
+
+          <div class="contact-form-wrapper">
+            <form id="agency-lead-form" onsubmit="handleFormSubmit(event)">
+              <div class="form-group">
+                <label class="form-label" for="client-name">Your Name *</label>
+                <input type="text" id="client-name" class="form-control" placeholder="e.g. Alex Morgan" required>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="client-email">Email Address *</label>
+                <input type="email" id="client-email" class="form-control" placeholder="alex@yourcompany.com" required>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="client-domain">Current Website / Domain (If any)</label>
+                <input type="text" id="client-domain" class="form-control" placeholder="e.g. yourbrand.com">
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="client-service">Primary Service Required *</label>
+                <select id="client-service" class="form-control" required>
+                  <option value="">Select Service</option>
+                  <option value="shopify">Shopify Store Development & CRO</option>
+                  <option value="webapp">Custom Web App & SaaS Building</option>
+                  <option value="seo">SEO Ranking & Speed Audit</option>
+                  <option value="ads">Online Ads & Digital Marketing</option>
+                  <option value="all">Full Agency Retainer (Web + SEO + Ads)</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="client-budget">Estimated Budget Range</label>
+                <select id="client-budget" class="form-control">
+                  <option value="$1,000 - $2,500">$1,000 - $2,500</option>
+                  <option value="$2,500 - $5,000" selected>$2,500 - $5,000</option>
+                  <option value="$5,000 - $10,000">$5,000 - $10,000</option>
+                  <option value="$10,000+">$10,000+ Enterprise</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="client-message">Project Overview & Goals *</label>
+                <textarea id="client-message" class="form-control" placeholder="Tell us about your project requirements, goals, and target timeline..." required></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary" style="width: 100%; padding: 1rem;">
+                <i class="fa-solid fa-paper-plane"></i> Submit Inquiry & Request Audit
+              </button>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- ==========================================================================
+       CASE STUDY MODAL DIALOG
+       ========================================================================== -->
+  <div class="modal-overlay" id="project-modal" onclick="closeModalOnOverlay(event)">
+    <div class="modal-container">
+      <button class="modal-close-btn" onclick="closeProjectModal()" aria-label="Close modal">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <img id="modal-img" src="" alt="Project Preview" class="modal-header-img">
+      
+      <div class="modal-body">
+        <div class="modal-meta-bar">
+          <span class="modal-meta-item">Category: <strong id="modal-category">SaaS</strong></span>
+          <span class="modal-meta-item">Live URL: <a href="#" id="modal-link" target="_blank" rel="noopener" style="color: var(--accent-primary);">domain.com</a></span>
+        </div>
+
+        <h2 class="modal-title" id="modal-title">Project Title</h2>
+        <p class="section-desc" id="modal-desc">Project short overview goes here.</p>
+
+        <h4 class="modal-section-title">Project Challenge & Objective</h4>
+        <p id="modal-challenge" style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1rem;"></p>
+
+        <h4 class="modal-section-title">SixthCrest Architecture & Solution</h4>
+        <p id="modal-solution" style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1rem;"></p>
+
+        <h4 class="modal-section-title">Key Performance Metrics Achieved</h4>
+        <ul id="modal-metrics" style="list-style: disc; padding-left: 1.25rem; color: var(--text-main); font-size: 0.95rem;"></ul>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ==========================================================================
+       FOOTER
+       ========================================================================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#hero" class="brand-logo">
+            <span class="logo-icon">6</span>
+            <span>SixthCrest</span>
+          </a>
+          <p>SixthCrest is a specialized web engineering and performance marketing agency. We build Shopify stores, SaaS platforms, SEO campaigns, and high-converting ads.</p>
+        </div>
+
+        <div class="footer-col">
+          <h5>Services</h5>
+          <ul class="footer-links">
+            <li><a href="#services">Shopify Store Building</a></li>
+            <li><a href="#services">Custom SaaS Development</a></li>
+            <li><a href="#services">Search Engine Optimization</a></li>
+            <li><a href="#services">Meta & Google Ads</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Portfolio Projects</h5>
+          <ul class="footer-links">
+            <li><a href="https://rxdoctor.in" target="_blank" rel="noopener">RxDoctor.in</a></li>
+            <li><a href="https://uptimebunny.com" target="_blank" rel="noopener">UptimeBunny.com</a></li>
+            <li><a href="https://goroomz.in" target="_blank" rel="noopener">GoRoomz.in</a></li>
+            <li><a href="https://politico.fit" target="_blank" rel="noopener">Politico.fit</a></li>
+            <li><a href="https://bananaz.in" target="_blank" rel="noopener">Bananaz.in</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Agency</h5>
+          <ul class="footer-links">
+            <li><a href="#estimator">Cost Calculator</a></li>
+            <li><a href="#about">Why Choose Us</a></li>
+            <li><a href="#contact">Free Site Audit</a></li>
+            <li><a href="#contact">Get In Touch</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 SixthCrest. All rights reserved.</p>
+        <p>Designed & Engineered with Precision by SixthCrest</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

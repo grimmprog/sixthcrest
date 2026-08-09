@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SEO & E-Commerce Insights | Agentic Commerce, Shopify & SEO | SixthCrest</title>
+  <meta name="description" content="Explore expert articles on Agentic Commerce for Shopify, custom Shopify extensions, payment gateway integrations, store installation blueprints, and AEO/SEO strategies.">
+  <meta name="keywords" content="Agentic Commerce Agency, Shopify Extensions, Shopify Payment Gateways, Shopify Store Installation, Answer Engine Optimization, E-commerce SEO">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Specific Knowledge Hub Styles */
+    .article-hero {
+      padding: 8rem 0 4rem;
+      text-align: center;
+    }
+
+    .article-search-bar {
+      max-width: 600px;
+      margin: 2rem auto 0;
+      position: relative;
+    }
+
+    .article-search-input {
+      width: 100%;
+      padding: 1rem 1.5rem 1rem 3.25rem;
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-full);
+      color: var(--text-main);
+      font-size: 1rem;
+      outline: none;
+      transition: var(--transition);
+    }
+
+    .article-search-input:focus {
+      border-color: var(--accent-primary);
+      box-shadow: 0 0 20px rgba(99, 102, 241, 0.3);
+    }
+
+    .article-search-icon {
+      position: absolute;
+      left: 1.25rem;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-muted);
+      font-size: 1.1rem;
+    }
+
+    .featured-article-card {
+      background: linear-gradient(135deg, rgba(15, 23, 42, 0.9), rgba(30, 41, 59, 0.9));
+      border: 1px solid var(--border-highlight);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      margin-bottom: 4rem;
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .featured-content {
+      padding: 3rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .featured-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      min-height: 350px;
+    }
+
+    .article-meta {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+    }
+
+    .article-meta span i {
+      color: var(--accent-secondary);
+      margin-right: 0.35rem;
+    }
+
+    .read-time-badge {
+      background: rgba(99, 102, 241, 0.15);
+      color: var(--accent-primary);
+      padding: 0.25rem 0.75rem;
+      border-radius: var(--radius-full);
+      font-weight: 700;
+      font-size: 0.8rem;
+    }
+
+    .cta-banner-card {
+      background: linear-gradient(135deg, #6366f1 0%, #06b6d4 100%);
+      border-radius: var(--radius-lg);
+      padding: 3.5rem 2.5rem;
+      text-align: center;
+      color: #ffffff;
+      margin: 4rem 0;
+      box-shadow: 0 20px 40px rgba(99, 102, 241, 0.3);
+    }
+
+    @media (max-width: 992px) {
+      .featured-article-card { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="navbar" id="navbar">
+    <div class="container navbar-inner">
+      <a href="index.html#hero" class="brand-logo">
+        <span class="logo-icon">6</span>
+        <span>SixthCrest</span>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="index.html#services">Services</a></li>
+        <li><a href="index.html#portfolio">Portfolio</a></li>
+        <li><a href="index.html#estimator">Estimator</a></li>
+        <li><a href="articles.html" class="active">Articles</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+        <li><a href="admin.html" target="_blank" class="admin-nav-link"><i class="fa-solid fa-lock"></i> Admin</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <div class="currency-selector-wrapper">
+          <select id="currency-select" class="currency-select" onchange="changeCurrency(this.value)">
+            <option value="USD">🇺🇸 USD ($)</option>
+            <option value="INR">🇮🇳 INR (₹)</option>
+            <option value="EUR">🇪🇺 EUR (€)</option>
+            <option value="GBP">🇬🇧 GBP (£)</option>
+          </select>
+        </div>
+
+        <button class="theme-toggle-btn" id="theme-toggle-btn">
+          <i class="fa-solid fa-moon" id="theme-icon"></i>
+        </button>
+
+        <a href="index.html#contact" class="btn btn-primary">
+          <i class="fa-solid fa-paper-plane"></i>
+          <span>Get Free Audit</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO SECTION -->
+    <section class="article-hero">
+      <div class="container">
+        <div class="badge-pill">
+          <span class="pulse-dot"></span>
+          <span>Knowledge & Strategy Hub</span>
+        </div>
+        <h1 class="hero-title">
+          Shopify, Agentic Commerce & <span class="text-gradient">SEO Playbooks</span>
+        </h1>
+        <p class="hero-subtitle">
+          In-depth guides on AI shopping agents, Answer Engine Optimization (AEO), custom Shopify app extensions, payment gateways, and high-converting store blueprints.
+        </p>
+
+        <div class="article-search-bar">
+          <i class="fa-solid fa-magnifying-glass article-search-icon"></i>
+          <input type="text" id="article-search-input" class="article-search-input" placeholder="Search articles by keyword (e.g. Agentic Commerce, Shopify, Payment Gateways)..." oninput="filterArticles()">
+        </div>
+      </div>
+    </section>
+
+
+    <!-- FEATURED ARTICLE spotlight -->
+    <section class="section" style="padding-top: 0;">
+      <div class="container">
+        
+        <div class="featured-article-card" id="featured-article">
+          <div class="featured-content">
+            <div class="article-meta">
+              <span class="read-time-badge"><i class="fa-solid fa-robot"></i> Agentic Commerce</span>
+              <span style="color: rgba(255, 255, 255, 0.8);"><i class="fa-solid fa-clock"></i> 8 Min Read</span>
+              <span style="color: rgba(255, 255, 255, 0.8);"><i class="fa-solid fa-calendar"></i> Aug 2026</span>
+            </div>
+
+            <h2 style="font-size: 2rem; margin-bottom: 1rem; color: #fff;">
+              <a href="articles/agentic-commerce-agency.html" style="color: inherit; text-decoration: none;">The Agentic Commerce Playbook: Preparing Your Shopify Store for AI Shopping Agents & AEO</a>
+            </h2>
+
+            <p style="color: rgba(255, 255, 255, 0.85); font-size: 1rem; margin-bottom: 1.5rem;">
+              How AI agents (ChatGPT, Claude, Gemini) are replacing traditional search bars, and why your Shopify store must adopt Model Context Protocol (MCP) data feeds and Answer Engine Optimization (AEO) to stay discoverable.
+            </p>
+
+            <div>
+              <a href="articles/agentic-commerce-agency.html" class="btn btn-primary">
+                <span>Read Full Article</span>
+                <i class="fa-solid fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+
+          <img src="assets/bananaz.png" alt="Agentic Commerce AI Shopping Agents" class="featured-img">
+        </div>
+
+
+        <!-- CATEGORY FILTER BUTTONS -->
+        <div class="portfolio-filter-bar">
+          <button class="filter-btn active" onclick="filterCategory('all', this)">All Guides</button>
+          <button class="filter-btn" onclick="filterCategory('agentic', this)">Agentic Commerce</button>
+          <button class="filter-btn" onclick="filterCategory('shopify', this)">Shopify Extensions</button>
+          <button class="filter-btn" onclick="filterCategory('payments', this)">Payment Gateways</button>
+          <button class="filter-btn" onclick="filterCategory('seo', this)">SEO & Speed</button>
+        </div>
+
+
+        <!-- ARTICLES GRID -->
+        <div class="portfolio-grid" id="articles-grid">
+
+          <!-- Article 1: Agentic Commerce -->
+          <div class="project-card article-item" data-category="agentic">
+            <div class="project-thumbnail-wrapper">
+              <img src="assets/bananaz.png" alt="Agentic Commerce Agency Blueprint">
+              <span class="project-category-badge">Agentic Commerce</span>
+            </div>
+            <div class="project-body">
+              <div class="article-meta" style="margin-bottom: 0.5rem;">
+                <span><i class="fa-solid fa-clock"></i> 8 Min</span>
+                <span>• Aug 2026</span>
+              </div>
+              <h3 class="project-title">
+                <a href="articles/agentic-commerce-agency.html" style="color: inherit; text-decoration: none;">The Agentic Commerce Agency Guide for Shopify</a>
+              </h3>
+              <p class="project-description">
+                Prepare your store for autonomous AI shopping agents. Learn how Answer Engine Optimization (AEO) and structured product feeds enable AI bots to buy from your store directly.
+              </p>
+              <div class="project-highlights">
+                <span class="highlight-tag">AI Agents</span>
+                <span class="highlight-tag">AEO Strategy</span>
+                <span class="highlight-tag">Shopify MCP</span>
+              </div>
+              <div class="project-actions">
+                <a href="articles/agentic-commerce-agency.html" class="btn-case-study">
+                  <span>Read Guide</span>
+                  <i class="fa-solid fa-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Article 2: Custom Shopify Extensions -->
+          <div class="project-card article-item" data-category="shopify">
+            <div class="project-thumbnail-wrapper">
+              <img src="assets/politico_fit.png" alt="Shopify Extensions & App Suite">
+              <span class="project-category-badge">Shopify Apps</span>
+            </div>
+            <div class="project-body">
+              <div class="article-meta" style="margin-bottom: 0.5rem;">
+                <span><i class="fa-solid fa-clock"></i> 6 Min</span>
+                <span>• Aug 2026</span>
+              </div>
+              <h3 class="project-title">
+                <a href="articles/shopify-extensions-guide.html" style="color: inherit; text-decoration: none;">Essential Custom Shopify Extensions & App Suite for 2026</a>
+              </h3>
+              <p class="project-description">
+                From theme app extensions and custom liquid blocks to private API apps. Learn how to extend Shopify checkout and cart functionality without slowing down load speeds.
+              </p>
+              <div class="project-highlights">
+                <span class="highlight-tag">Liquid App Blocks</span>
+                <span class="highlight-tag">Checkout Extensions</span>
+                <span class="highlight-tag">Cart CRO</span>
+              </div>
+              <div class="project-actions">
+                <a href="articles/shopify-extensions-guide.html" class="btn-case-study">
+                  <span>Read Guide</span>
+                  <i class="fa-solid fa-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Article 3: Payment Gateways -->
+          <div class="project-card article-item" data-category="payments">
+            <div class="project-thumbnail-wrapper">
+              <img src="assets/goroomz.png" alt="Shopify Payment Gateway Integrations">
+              <span class="project-category-badge">Payment Gateways</span>
+            </div>
+            <div class="project-body">
+              <div class="article-meta" style="margin-bottom: 0.5rem;">
+                <span><i class="fa-solid fa-clock"></i> 7 Min</span>
+                <span>• Aug 2026</span>
+              </div>
+              <h3 class="project-title">
+                <a href="articles/shopify-payment-gateways.html" style="color: inherit; text-decoration: none;">Shopify Payment Gateways: Stripe, Razorpay, UPI & One-Click CRO</a>
+              </h3>
+              <p class="project-description">
+                Comprehensive guide to multi-currency payment gateway setups. Eliminate checkout drop-off using instant UPI, Stripe express checkout, and local payment methods.
+              </p>
+              <div class="project-highlights">
+                <span class="highlight-tag">Stripe & Razorpay</span>
+                <span class="highlight-tag">Instant UPI</span>
+                <span class="highlight-tag">Checkout CRO</span>
+              </div>
+              <div class="project-actions">
+                <a href="articles/shopify-payment-gateways.html" class="btn-case-study">
+                  <span>Read Guide</span>
+                  <i class="fa-solid fa-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Article 4: Store Setup Blueprint -->
+          <div class="project-card article-item" data-category="seo">
+            <div class="project-thumbnail-wrapper">
+              <img src="assets/uptimebunny.png" alt="Shopify Store Setup & Speed Blueprint">
+              <span class="project-category-badge">Store Setup</span>
+            </div>
+            <div class="project-body">
+              <div class="article-meta" style="margin-bottom: 0.5rem;">
+                <span><i class="fa-solid fa-clock"></i> 10 Min</span>
+                <span>• Aug 2026</span>
+              </div>
+              <h3 class="project-title">
+                <a href="articles/shopify-store-setup.html" style="color: inherit; text-decoration: none;">Complete Shopify Store Setup Blueprint: Themes, Speed & SEO</a>
+              </h3>
+              <p class="project-description">
+                Step-by-step master guide to installing, configuring, and launching high-speed Shopify stores with 90+ Core Web Vitals and technical schema markup.
+              </p>
+              <div class="project-highlights">
+                <span class="highlight-tag">Store Launch</span>
+                <span class="highlight-tag">Core Web Vitals</span>
+                <span class="highlight-tag">Technical SEO</span>
+              </div>
+              <div class="project-actions">
+                <a href="articles/shopify-store-setup.html" class="btn-case-study">
+                  <span>Read Guide</span>
+                  <i class="fa-solid fa-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+
+        <!-- CTA BANNER CARD -->
+        <div class="cta-banner-card">
+          <h2 style="font-size: 2.25rem; margin-bottom: 1rem;">Ready to Build an Agentic Store or Scale Your Brand?</h2>
+          <p style="font-size: 1.1rem; opacity: 0.9; max-width: 650px; margin: 0 auto 2rem;">
+            Partner with SixthCrest for custom Shopify development, Agentic Commerce integrations, technical SEO, and ROI-driven marketing.
+          </p>
+          <a href="index.html#contact" class="btn btn-secondary btn-lg" style="color: var(--text-main);">
+            <i class="fa-solid fa-paper-plane"></i> Request Free Audit & Strategy Session
+          </a>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <p>&copy; 2026 SixthCrest. All rights reserved.</p>
+        <p><a href="index.html" style="color: var(--text-muted);">Back to Main Site</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    function filterCategory(cat, btn) {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const items = document.querySelectorAll('.article-item');
+      items.forEach(item => {
+        if (cat === 'all' || item.getAttribute('data-category') === cat) {
+          item.style.display = 'flex';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    }
+
+    function filterArticles() {
+      const q = document.getElementById('article-search-input').value.toLowerCase();
+      const items = document.querySelectorAll('.article-item');
+
+      items.forEach(item => {
+        const text = item.innerText.toLowerCase();
+        if (text.includes(q)) {
+          item.style.display = 'flex';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    }
+  </script>
+</body>
+</html>

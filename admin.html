@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SixthCrest | Admin Portal - Manage Leads & Dynamic Pricing</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+
+  <!-- AUTHENTICATION OVERLAY MODAL -->
+  <div class="auth-overlay" id="auth-modal">
+    <div class="auth-modal">
+      <div class="admin-brand-icon" style="width: 50px; height: 50px; margin: 0 auto 1rem; font-size: 1.5rem;">6</div>
+      <h2 style="font-size: 1.5rem; margin-bottom: 0.5rem;">SixthCrest Admin Portal</h2>
+      <p style="color: var(--admin-text-muted); font-size: 0.9rem; margin-bottom: 1.5rem;">Enter administrative passcode to access lead management & pricing settings.</p>
+      
+      <form onsubmit="authenticateAdmin(event)">
+        <div style="margin-bottom: 1.25rem;">
+          <input type="password" id="admin-passcode-input" class="form-control-admin" placeholder="Passcode (Default: admin123)" required style="width: 100%; text-align: center;">
+        </div>
+        <button type="submit" class="btn-admin btn-admin-primary" style="width: 100%; justify-content: center; padding: 0.85rem;">
+          <i class="fa-solid fa-key"></i> Unlock Dashboard
+        </button>
+      </form>
+      <p id="auth-error-msg" style="color: #ef4444; font-size: 0.85rem; margin-top: 1rem; display: none;">Invalid Passcode. Please try again.</p>
+    </div>
+  </div>
+
+  <!-- MAIN ADMIN DASHBOARD -->
+  <header class="admin-navbar">
+    <a href="index.html" class="admin-brand">
+      <span class="admin-brand-icon">6</span>
+      <span>SixthCrest <span style="font-size: 0.85rem; color: var(--admin-accent-cyan); font-weight: 500;">Admin</span></span>
+    </a>
+
+    <div class="admin-header-actions">
+      <div class="admin-badge">
+        <i class="fa-solid fa-circle" style="font-size: 0.5rem; color: #10b981;"></i> Live Lead Sync Active
+      </div>
+      <a href="index.html" class="btn-admin btn-admin-secondary" target="_blank">
+        <i class="fa-solid fa-arrow-up-right-from-square"></i> Open Main Site
+      </a>
+      <button class="btn-admin btn-admin-danger" onclick="logoutAdmin()">
+        <i class="fa-solid fa-right-from-bracket"></i> Lock Portal
+      </button>
+    </div>
+  </header>
+
+  <main class="admin-container">
+
+    <!-- OVERVIEW METRICS -->
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-icon"><i class="fa-solid fa-inbox"></i></div>
+        <div>
+          <div class="stat-number" id="stat-total-leads">0</div>
+          <div class="stat-label">Total Inquiries</div>
+        </div>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-icon" style="background: rgba(6, 182, 212, 0.15); color: #06b6d4;"><i class="fa-solid fa-envelope-open-text"></i></div>
+        <div>
+          <div class="stat-number" id="stat-new-leads">0</div>
+          <div class="stat-label">New Unread Leads</div>
+        </div>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-icon" style="background: rgba(168, 85, 247, 0.15); color: #a855f7;"><i class="fa-solid fa-spinner"></i></div>
+        <div>
+          <div class="stat-number" id="stat-progress-leads">0</div>
+          <div class="stat-label">Quotes In Progress</div>
+        </div>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-icon" style="background: rgba(16, 185, 129, 0.15); color: #10b981;"><i class="fa-solid fa-sack-dollar"></i></div>
+        <div>
+          <div class="stat-number" id="stat-pipeline-val">$0</div>
+          <div class="stat-label">Est. Pipeline Value</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB NAVIGATION -->
+    <div class="admin-tabs">
+      <button class="tab-btn active" onclick="switchAdminTab('tab-leads', this)">
+        <i class="fa-solid fa-list-check"></i> Leads & Quote Inquiries (<span id="leads-count-badge">0</span>)
+      </button>
+      <button class="tab-btn" onclick="switchAdminTab('tab-pricing', this)">
+        <i class="fa-solid fa-tags"></i> Dynamic Pricing Configurator
+      </button>
+    </div>
+
+    <!-- TAB 1: LEADS MANAGEMENT PANEL -->
+    <section class="tab-panel active" id="tab-leads">
+      <div class="table-card">
+        <div class="table-toolbar">
+          <div style="display: flex; gap: 1rem; flex-wrap: wrap; align-items: center;">
+            <div class="search-box">
+              <i class="fa-solid fa-magnifying-glass" style="color: var(--admin-text-muted);"></i>
+              <input type="text" id="lead-search-input" placeholder="Search by client name, email, domain..." oninput="filterLeadsTable()">
+            </div>
+
+            <select id="status-filter-select" class="form-control-admin" style="padding: 0.5rem 1rem;" onchange="filterLeadsTable()">
+              <option value="ALL">All Statuses</option>
+              <option value="New">New</option>
+              <option value="Contacted">Contacted</option>
+              <option value="In Progress">In Progress</option>
+              <option value="Closed">Closed / Won</option>
+            </select>
+          </div>
+
+          <button class="btn-admin btn-admin-primary" onclick="exportLeadsCSV()">
+            <i class="fa-solid fa-file-csv"></i> Export Leads CSV
+          </button>
+        </div>
+
+        <div class="table-responsive">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Client Name</th>
+                <th>Email & Domain</th>
+                <th>Service Needed</th>
+                <th>Budget / Estimate</th>
+                <th>Status</th>
+                <th>Submitted Date</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="leads-table-body">
+              <!-- Dynamically populated via admin.js -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 2: ESTIMATOR PRICING CONFIGURATOR -->
+    <section class="tab-panel" id="tab-pricing">
+      <div class="config-card">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; border-bottom: 1px solid var(--admin-card-border); padding-bottom: 1rem;">
+          <div>
+            <h3 style="font-size: 1.3rem;">Dynamic Regional Pricing Settings</h3>
+            <p style="color: var(--admin-text-muted); font-size: 0.9rem;">Modify base service costs and regional currency settings. Changes will instantly update the public Cost Estimator on index.html.</p>
+          </div>
+          <div style="display: flex; gap: 0.5rem;" id="currency-tab-buttons">
+            <button class="btn-admin btn-admin-secondary" onclick="loadCurrencyConfig('USD')">🇺🇸 USD ($)</button>
+            <button class="btn-admin btn-admin-secondary" onclick="loadCurrencyConfig('INR')">🇮🇳 INR (₹)</button>
+            <button class="btn-admin btn-admin-secondary" onclick="loadCurrencyConfig('EUR')">🇪🇺 EUR (€)</button>
+            <button class="btn-admin btn-admin-secondary" onclick="loadCurrencyConfig('GBP')">🇬🇧 GBP (£)</button>
+          </div>
+        </div>
+
+        <form id="pricing-config-form" onsubmit="savePricingConfig(event)">
+          <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem; background: rgba(99, 102, 241, 0.1); padding: 1rem; border-radius: 10px;">
+            <i class="fa-solid fa-globe" style="font-size: 1.5rem; color: var(--admin-accent-cyan);"></i>
+            <div>
+              <strong style="color: #fff;">Currently Editing: <span id="editing-currency-code">USD</span> Pricing Rules</strong>
+              <div style="font-size: 0.85rem; color: var(--admin-text-muted);">Set the base costs for each service tier in this target currency.</div>
+            </div>
+          </div>
+
+          <div class="config-grid">
+            <div class="form-group-admin">
+              <label>Currency Symbol</label>
+              <input type="text" id="config-symbol" class="form-control-admin" value="$" required>
+            </div>
+
+            <div class="form-group-admin">
+              <label>Shopify Store Base Cost</label>
+              <input type="number" id="config-shopify" class="form-control-admin" value="1200" required>
+            </div>
+
+            <div class="form-group-admin">
+              <label>Custom Web App / SaaS Base Cost</label>
+              <input type="number" id="config-webapp" class="form-control-admin" value="2000" required>
+            </div>
+
+            <div class="form-group-admin">
+              <label>Advanced SEO Audit Base Cost</label>
+              <input type="number" id="config-seo" class="form-control-admin" value="800" required>
+            </div>
+
+            <div class="form-group-admin">
+              <label>Meta & Google Ads Campaign Base Cost</label>
+              <input type="number" id="config-ads" class="form-control-admin" value="1000" required>
+            </div>
+          </div>
+
+          <div style="margin-top: 2rem; display: flex; gap: 1rem;">
+            <button type="submit" class="btn-admin btn-admin-primary" style="padding: 0.85rem 2rem;">
+              <i class="fa-solid fa-floppy-disk"></i> Save & Apply Pricing Config
+            </button>
+            <button type="button" class="btn-admin btn-admin-secondary" onclick="resetPricingToDefault()">
+              <i class="fa-solid fa-rotate-left"></i> Reset To Factory Defaults
+            </button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- LEAD DETAILS MODAL DIALOG -->
+  <div class="auth-overlay" id="lead-modal" style="display: none;">
+    <div class="auth-modal" style="max-width: 600px; text-align: left;">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; border-bottom: 1px solid var(--admin-card-border); padding-bottom: 0.75rem;">
+        <h3 id="modal-lead-id" style="font-size: 1.2rem; color: var(--admin-accent-cyan);">LEAD-101</h3>
+        <button onclick="closeLeadModal()" style="background: none; border: none; color: #fff; font-size: 1.2rem; cursor: pointer;"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 1rem;">
+        <div><strong>Client Name:</strong> <span id="modal-lead-name">Alex Morgan</span></div>
+        <div><strong>Email:</strong> <span id="modal-lead-email">alex@domain.com</span></div>
+        <div><strong>Website / Domain:</strong> <span id="modal-lead-domain">domain.com</span></div>
+        <div><strong>Target Service:</strong> <span id="modal-lead-service">Shopify Development</span></div>
+        <div><strong>Stated Budget:</strong> <span id="modal-lead-budget">$2,500 - $5,000</span></div>
+        <div><strong>Estimator Price Output:</strong> <span id="modal-lead-estimate">$1,800 - $2,500</span></div>
+        <div><strong>Project Message:</strong></div>
+        <div id="modal-lead-message" style="background: rgba(255, 255, 255, 0.04); padding: 1rem; border-radius: 8px; font-size: 0.9rem; color: var(--admin-text-muted); white-space: pre-wrap;"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="admin.js"></script>
+</body>
+</html>
