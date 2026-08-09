@@ -348,28 +348,41 @@ function openProjectModal(projectKey) {
   const project = portfolioData[projectKey];
   if (!project) return;
 
-  document.getElementById("modal-img").src = project.image;
-  document.getElementById("modal-title").innerText = project.title;
-  document.getElementById("modal-category").innerText = project.category;
-  document.getElementById("modal-desc").innerText = project.description;
-  document.getElementById("modal-challenge").innerText = project.challenge;
-  document.getElementById("modal-solution").innerText = project.solution;
-  
+  const modalImg = document.getElementById("modal-img");
+  const modalTitle = document.getElementById("modal-title");
+  const modalCategory = document.getElementById("modal-category");
+  const modalDesc = document.getElementById("modal-desc");
+  const modalChallenge = document.getElementById("modal-challenge");
+  const modalSolution = document.getElementById("modal-solution");
   const linkElem = document.getElementById("modal-link");
-  linkElem.href = project.link;
-  linkElem.innerText = project.domain;
-
   const metricsList = document.getElementById("modal-metrics");
-  metricsList.innerHTML = "";
-  project.metrics.forEach(m => {
-    const li = document.createElement("li");
-    li.innerText = m;
-    metricsList.appendChild(li);
-  });
+
+  if (modalImg) modalImg.src = project.image;
+  if (modalTitle) modalTitle.innerText = project.title;
+  if (modalCategory) modalCategory.innerText = project.category;
+  if (modalDesc) modalDesc.innerText = project.description;
+  if (modalChallenge) modalChallenge.innerText = project.challenge;
+  if (modalSolution) modalSolution.innerText = project.solution;
+  
+  if (linkElem) {
+    linkElem.href = project.link;
+    linkElem.innerText = project.domain;
+  }
+
+  if (metricsList) {
+    metricsList.innerHTML = "";
+    project.metrics.forEach(m => {
+      const li = document.createElement("li");
+      li.innerText = m;
+      metricsList.appendChild(li);
+    });
+  }
 
   const modal = document.getElementById("project-modal");
-  modal.classList.add("active");
-  document.body.style.overflow = "hidden";
+  if (modal) {
+    modal.classList.add("active");
+    document.body.style.overflow = "hidden";
+  }
 }
 
 function closeProjectModal() {
@@ -384,6 +397,44 @@ function closeModalOnOverlay(e) {
   if (e.target.id === "project-modal") {
     closeProjectModal();
   }
+}
+
+// Lead Magnet Modal Functions
+function openLeadMagnetModal() {
+  const modal = document.getElementById("lead-magnet-modal");
+  if (modal) {
+    modal.classList.add("active");
+    document.body.style.overflow = "hidden";
+  }
+}
+
+function closeLeadMagnetModal() {
+  const modal = document.getElementById("lead-magnet-modal");
+  if (modal) {
+    modal.classList.remove("active");
+    document.body.style.overflow = "auto";
+  }
+}
+
+function handleLeadMagnetSubmit(e) {
+  e.preventDefault();
+  const name = document.getElementById("lm-name").value;
+  const email = document.getElementById("lm-email").value;
+
+  fetch("https://formsubmit.co/ajax/chandchv@gmail.com", {
+    method: "POST",
+    headers: { "Content-Type": "application/json", "Accept": "application/json" },
+    body: JSON.stringify({
+      _subject: `📥 Free Lead Magnet Request: ${name} (${email})`,
+      "Name": name,
+      "Email": email,
+      "Resource Requested": "Shopify Speed & Technical SEO Checklist 2026"
+    })
+  }).catch(e => console.log("Lead magnet error:", e));
+
+  alert(`Thank you, ${name}!\n\nYour 2026 Shopify Speed & Technical SEO Checklist has been emailed to ${email}. Check your inbox!`);
+  closeLeadMagnetModal();
+  e.target.reset();
 }
 
 
