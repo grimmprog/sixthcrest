@@ -56,7 +56,7 @@
           <i class="fa-solid fa-moon" id="theme-icon"></i>
         </button>
 
-        <button class="mobile-menu-btn" id="mobile-menu-btn" onclick="toggleMobileMenu(event)" aria-label="Toggle Mobile Menu">
+        <button class="mobile-burger-trigger" id="mobile-burger-trigger" onclick="openMobileDrawer()" aria-label="Open Navigation Menu">
           <i class="fa-solid fa-bars"></i>
         </button>
       </div>
@@ -127,5 +127,32 @@
       <p>&copy; 2026 SixthCrest. Shopify Growth Engineering Agency.</p>
     </div>
   </footer>
+
+  <!-- REBUILT MOBILE NAVIGATION DRAWER & OVERLAY -->
+  <div id="mobile-drawer-overlay" class="mobile-drawer-overlay" onclick="closeMobileDrawer()"></div>
+  <aside id="mobile-drawer-menu" class="mobile-drawer-menu" aria-label="Mobile Navigation">
+    <div class="mobile-drawer-header">
+      <div class="brand-logo" style="flex-direction: row; align-items: center; gap: 0.6rem;">
+        <img src="assets/logo-icon.png" alt="SixthCrest Logo" style="width: 32px; height: 32px;">
+        <span style="font-size: 0.85rem; font-weight: 800; letter-spacing: 0.12em;">SIXTHCREST</span>
+      </div>
+      <button id="mobile-drawer-close" class="mobile-drawer-close-btn" onclick="closeMobileDrawer()" aria-label="Close Menu">&times;</button>
+    </div>
+    <nav class="mobile-drawer-nav">
+      <a href="index.html#services" class="mobile-nav-item"><i class="fa-solid fa-layer-group"></i> Services</a>
+      <a href="index.html#portfolio" class="mobile-nav-item"><i class="fa-solid fa-briefcase"></i> Case Studies</a>
+      <a href="index.html#estimator" class="mobile-nav-item"><i class="fa-solid fa-calculator"></i> Estimator</a>
+      <a href="shopify-development.html" class="mobile-nav-item"><i class="fa-brands fa-shopify"></i> Shopify Growth</a>
+      <a href="custom-saas-development.html" class="mobile-nav-item"><i class="fa-solid fa-code"></i> Custom SaaS</a>
+      <a href="articles.html" class="mobile-nav-item"><i class="fa-solid fa-newspaper"></i> Articles & Guides</a>
+      <a href="index.html#about" class="mobile-nav-item"><i class="fa-solid fa-shield-halved"></i> Why Us</a>
+      <a href="index.html#contact" class="mobile-nav-item"><i class="fa-solid fa-envelope"></i> Contact Us</a>
+    </nav>
+    <div class="mobile-drawer-footer">
+      <a href="https://wa.me/917013891760?text=Hi%20SixthCrest%2C%20I%20want%20to%20discuss%20a%20project" target="_blank" rel="noopener" class="btn-whatsapp" style="width: 100%; justify-content: center; font-size: 0.95rem; padding: 0.75rem;">
+        <i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp
+      </a>
+    </div>
+  </aside>
 </body>
 </html>
