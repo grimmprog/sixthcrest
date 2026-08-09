@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /admin.html
+
+# Sitemap URL for Google & Bing Search Engines
+Sitemap: https://sixthcrest.com/sitemap.xml
