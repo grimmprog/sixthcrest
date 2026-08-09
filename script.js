@@ -156,7 +156,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // Mobile Hamburger Menu Drawer Handler
-function toggleMobileMenu(e) {
+window.toggleMobileMenu = function(e) {
   if (e) e.stopPropagation();
   const navLinks = document.getElementById("nav-links");
   const menuBtn = document.getElementById("mobile-menu-btn");
@@ -174,14 +174,14 @@ function toggleMobileMenu(e) {
       }
     }
   }
-}
+};
 
 function initMobileMenu() {
   const menuBtn = document.getElementById("mobile-menu-btn");
   const navLinks = document.getElementById("nav-links");
 
   if (menuBtn) {
-    menuBtn.onclick = (e) => toggleMobileMenu(e);
+    menuBtn.onclick = (e) => window.toggleMobileMenu(e);
   }
 
   // Close menu when clicking outside
