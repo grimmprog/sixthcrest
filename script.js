@@ -159,6 +159,7 @@ document.addEventListener("DOMContentLoaded", () => {
 // Mobile Hamburger Menu Drawer Handler
 window.toggleMobileMenu = function(e) {
   if (e) e.stopPropagation();
+  const navbar = document.getElementById("navbar");
   const navLinks = document.getElementById("nav-links");
   const menuBtn = document.getElementById("mobile-menu-btn");
   let overlay = document.getElementById("nav-drawer-overlay");
@@ -168,11 +169,19 @@ window.toggleMobileMenu = function(e) {
     overlay.id = "nav-drawer-overlay";
     overlay.className = "nav-drawer-overlay";
     overlay.onclick = function(evt) { window.toggleMobileMenu(evt); };
-    document.body.appendChild(overlay);
+    if (navbar) {
+      navbar.appendChild(overlay);
+    } else {
+      document.body.appendChild(overlay);
+    }
   }
 
   if (navLinks) {
     const isActive = navLinks.classList.toggle("active");
+    if (navbar) {
+      if (isActive) navbar.classList.add("menu-open");
+      else navbar.classList.remove("menu-open");
+    }
     if (overlay) {
       if (isActive) overlay.classList.add("active");
       else overlay.classList.remove("active");
@@ -190,6 +199,7 @@ window.toggleMobileMenu = function(e) {
 function initMobileMenu() {
   const menuBtn = document.getElementById("mobile-menu-btn");
   const navLinks = document.getElementById("nav-links");
+  const navbar = document.getElementById("navbar");
 
   if (menuBtn) {
     menuBtn.onclick = (e) => window.toggleMobileMenu(e);
@@ -200,6 +210,7 @@ function initMobileMenu() {
     navLinks.querySelectorAll("a").forEach((link) => {
       link.addEventListener("click", () => {
         navLinks.classList.remove("active");
+        if (navbar) navbar.classList.remove("menu-open");
         const overlay = document.getElementById("nav-drawer-overlay");
         if (overlay) overlay.classList.remove("active");
         if (menuBtn) {
