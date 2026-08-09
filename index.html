@@ -101,6 +101,12 @@
   }
   </script>
 
+  <!-- Favicon & Touch Icons -->
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="64x64" href="assets/favicon.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+  <link rel="shortcut icon" href="assets/favicon.ico">
+
   <!-- Fonts & FontAwesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="styles.css">
@@ -113,7 +119,7 @@
   <header class="navbar" id="navbar">
     <div class="container navbar-inner">
       <a href="#hero" class="brand-logo">
-        <span class="logo-icon">6</span>
+        <img src="assets/logo-icon.png" alt="SixthCrest Logo Emblem" class="logo-icon-img">
         <span>SixthCrest</span>
       </a>
 
@@ -1050,6 +1056,58 @@
   </div>
 
 
+  <!-- ==========================================================================
+       FOOTER
+       ========================================================================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#hero" class="brand-logo">
+            <img src="assets/logo.png" alt="SixthCrest Logo" class="brand-logo-img" style="height: 52px;">
+          </a>
+          <p>SixthCrest is a specialized web engineering and performance marketing agency. We build Shopify stores, SaaS platforms, SEO campaigns, and high-converting ads.</p>
+        </div>
+
+        <div class="footer-col">
+          <h5>Services</h5>
+          <ul class="footer-links">
+            <li><a href="#services">Shopify Store Building</a></li>
+            <li><a href="#services">Custom SaaS Development</a></li>
+            <li><a href="#services">Search Engine Optimization</a></li>
+            <li><a href="#services">Meta & Google Ads</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Portfolio Projects</h5>
+          <ul class="footer-links">
+            <li><a href="https://rxdoctor.in" target="_blank" rel="noopener">RxDoctor.in</a></li>
+            <li><a href="https://uptimebunny.com" target="_blank" rel="noopener">UptimeBunny.com</a></li>
+            <li><a href="https://goroomz.in" target="_blank" rel="noopener">GoRoomz.in</a></li>
+            <li><a href="https://politico.fit" target="_blank" rel="noopener">Politico.fit</a></li>
+            <li><a href="https://bananaz.in" target="_blank" rel="noopener">Bananaz.in</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Agency</h5>
+          <ul class="footer-links">
+            <li><a href="#estimator">Cost Calculator</a></li>
+            <li><a href="#about">Why Choose Us</a></li>
+            <li><a href="#contact">Free Site Audit</a></li>
+            <li><a href="#contact">Get In Touch</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 SixthCrest. All rights reserved.</p>
+        <p>Designed & Engineered with Precision by SixthCrest</p>
+      </div>
+    </div>
+  </footer>
+
   <!-- FREE LEAD MAGNET DOWNLOAD MODAL -->
   <div class="modal-overlay" id="lead-magnet-modal">
     <div class="modal-container" style="max-width: 540px; padding: 2.5rem;">
@@ -1079,7 +1137,6 @@
     </div>
   </div>
 
-
   <!-- QUOTE SUBMISSION SUCCESS MODAL -->
   <div class="modal-overlay" id="quote-success-modal">
     <div class="modal-container" style="max-width: 520px; padding: 2.5rem; text-align: center;">
@@ -1093,22 +1150,6 @@
       <p style="font-size: 0.95rem; color: var(--text-muted); margin-bottom: 1.5rem;">
         Your inquiry details have been dispatched to <strong>hello@sixthcrest.com</strong>.
       </p>
-
-      <div id="modal-lead-details" style="background: var(--bg-glass); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 1.25rem; text-align: left; font-size: 0.9rem; margin-bottom: 1.75rem; color: var(--text-muted);">
-        <!-- Filled dynamically by JavaScript -->
-      </div>
-
-      <div style="display: flex; flex-direction: column; gap: 0.85rem;">
-        <a id="modal-wa-btn" href="#" target="_blank" rel="noopener" class="btn-whatsapp" style="width: 100%; justify-content: center; font-size: 1rem; padding: 0.85rem;">
-          <i class="fa-brands fa-whatsapp" style="font-size: 1.25rem;"></i>
-          <span>Connect Direct on WhatsApp</span>
-        </a>
-        <button class="btn btn-secondary" onclick="closeQuoteSuccessModal()" style="width: 100%;">
-          Close Window
-        </button>
-      </div>
-    </div>
-  </div>
 
       <div id="modal-lead-details" style="background: var(--bg-glass); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 1.25rem; text-align: left; font-size: 0.9rem; margin-bottom: 1.75rem; color: var(--text-muted);">
         <!-- Filled dynamically by JavaScript -->

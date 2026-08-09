@@ -202,17 +202,29 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: -0.03em;
 }
 
-.brand-logo .logo-icon {
+.brand-logo-img {
+  height: 42px;
+  width: auto;
+  border-radius: 8px;
+  object-fit: contain;
+  transition: var(--transition);
+}
+
+.brand-logo:hover .brand-logo-img {
+  transform: scale(1.04);
+}
+
+.brand-logo .logo-icon-img {
   width: 38px;
   height: 38px;
-  background: var(--gradient-brand);
   border-radius: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #fff;
-  font-weight: 900;
-  box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
+  object-fit: cover;
+  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.35);
+  transition: var(--transition);
+}
+
+.brand-logo:hover .logo-icon-img {
+  transform: scale(1.06);
 }
 
 /* Button-Style Navigation Menu */
