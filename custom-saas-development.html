@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Custom SaaS & Web Application Development | SixthCrest</title>
+  <meta name="description" content="SixthCrest engineers production-grade SaaS platforms, booking systems, and administrative web applications. Built by product engineers who operate their own software.">
+  <link rel="canonical" href="https://sixthcrest.com/custom-saas-development.html">
+
+  <!-- OpenGraph & Twitter Cards -->
+  <meta property="og:title" content="Custom SaaS Development & Product Engineering | SixthCrest">
+  <meta property="og:description" content="Full-stack React, Node.js, and Cloud Infrastructure development for scalable SaaS platforms. Operated by engineers running live production products.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://sixthcrest.com/custom-saas-development.html">
+
+  <!-- Favicon & Touch Icons -->
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="64x64" href="assets/favicon.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+  <link rel="shortcut icon" href="assets/favicon.ico">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="navbar" id="navbar">
+    <div class="container navbar-inner">
+      <a href="index.html#hero" class="brand-logo">
+        <img src="assets/logo-icon.png" alt="SixthCrest Logo Emblem" class="logo-icon-img">
+        <span>SixthCrest</span>
+      </a>
+
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html#services" class="nav-link-btn"><i class="fa-solid fa-layer-group"></i> Services</a></li>
+        <li><a href="index.html#portfolio" class="nav-link-btn"><i class="fa-solid fa-briefcase"></i> Case Studies</a></li>
+        <li><a href="shopify-development.html" class="nav-link-btn"><i class="fa-brands fa-shopify"></i> Shopify</a></li>
+        <li><a href="custom-saas-development.html" class="nav-link-btn active"><i class="fa-solid fa-code"></i> SaaS Build</a></li>
+        <li><a href="articles.html" class="nav-link-btn"><i class="fa-solid fa-newspaper"></i> Articles</a></li>
+        <li><a href="index.html#contact" class="nav-link-btn"><i class="fa-solid fa-envelope"></i> Contact</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <div class="currency-selector-wrapper">
+          <select id="currency-select" class="currency-select" onchange="changeCurrency(this.value)">
+            <option value="USD">🇺🇸 USD ($)</option>
+            <option value="INR">🇮🇳 INR (₹)</option>
+            <option value="EUR">🇪🇺 EUR (€)</option>
+            <option value="GBP">🇬🇧 GBP (£)</option>
+          </select>
+        </div>
+
+        <button class="theme-toggle-btn" id="theme-toggle-btn">
+          <i class="fa-solid fa-moon" id="theme-icon"></i>
+        </button>
+
+        <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle Mobile Menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main style="padding-top: 5rem;">
+    <!-- HERO -->
+    <section class="hero-section">
+      <div class="container" style="text-align: center;">
+        <div class="badge-pill">
+          <span class="pulse-dot"></span>
+          <span>Product Engineering & SaaS Development</span>
+        </div>
+
+        <h1 class="hero-title" style="max-width: 900px; margin: 0 auto 1rem;">
+          Built by Engineers Who <span class="text-gradient">Run Their Own Products</span>
+        </h1>
+
+        <p class="hero-subtitle" style="max-width: 820px; margin: 0 auto 2.5rem;">
+          We don't just build software for clients — we operate live production SaaS platforms (RxDoctor, UptimeBunny) serving 100,000+ active records with 99.9% uptime.
+        </p>
+
+        <div class="hero-cta-group" style="justify-content: center;">
+          <a href="index.html#contact" class="btn btn-primary btn-lg">
+            <i class="fa-solid fa-code"></i>
+            <span>Discuss SaaS Architecture</span>
+          </a>
+          <a href="https://wa.me/917013891760?text=Hi%20Chandrasekhar%2C%20I%20want%20to%20discuss%20building%20a%20custom%20SaaS%20MVP" target="_blank" rel="noopener" class="btn-whatsapp btn-lg">
+            <i class="fa-brands fa-whatsapp"></i>
+            <span>Direct Founder Consultation</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CORE CAPABILITIES -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-subtitle">Full-Stack SaaS Engineering</span>
+          <h2 class="section-title">Our SaaS Development Stack</h2>
+        </div>
+
+        <div class="services-grid">
+          <div class="service-card">
+            <div class="service-icon-wrapper"><i class="fa-brands fa-react"></i></div>
+            <h3>React & Node.js Architecture</h3>
+            <p>Modern component-driven UIs with sub-100ms API response rates and WebSocket real-time updates.</p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon-wrapper"><i class="fa-solid fa-server"></i></div>
+            <h3>Cloud Infrastructure & SLAs</h3>
+            <p>AWS, GCP, and Hostinger cloud deployments engineered for 99.9% uptime and zero-downtime database scaling.</p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon-wrapper"><i class="fa-solid fa-mobile-screen-button"></i></div>
+            <h3>SaaS MVP to Scale</h3>
+            <p>Rapid MVP execution for technical founders: authentication, multi-tenant billing, status pages, and automated notifications.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container" style="text-align: center;">
+      <p>&copy; 2026 SixthCrest. Product Engineering & Custom SaaS Development.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

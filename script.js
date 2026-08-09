@@ -5,10 +5,10 @@
 
 // --- Default Regional Pricing Configuration ---
 const defaultPricingConfig = {
-  USD: { symbol: "$", code: "USD", shopify: 1200, webapp: 2000, seo: 800, ads: 1000, rate: 1.0 },
-  INR: { symbol: "₹", code: "INR", shopify: 45000, webapp: 85000, seo: 25000, ads: 35000, rate: 85.0 },
-  EUR: { symbol: "€", code: "EUR", shopify: 1100, webapp: 1850, seo: 750, ads: 920, rate: 0.92 },
-  GBP: { symbol: "£", code: "GBP", shopify: 950, webapp: 1600, seo: 650, ads: 800, rate: 0.78 }
+  USD: { symbol: "$", code: "USD", shopify: 2500, webapp: 3800, seo: 1200, ads: 1500, rate: 1.0 },
+  INR: { symbol: "₹", code: "INR", shopify: 199000, webapp: 299000, seo: 95000, ads: 125000, rate: 85.0 },
+  EUR: { symbol: "€", code: "EUR", shopify: 2300, webapp: 3500, seo: 1100, ads: 1400, rate: 0.92 },
+  GBP: { symbol: "£", code: "GBP", shopify: 1950, webapp: 3100, seo: 950, ads: 1200, rate: 0.78 }
 };
 
 // Seed sample leads if none exist
@@ -241,10 +241,10 @@ const currencyBudgetMap = {
 };
 
 const packagePricingMap = {
-  USD: { starter: "$2,500", growth: "$4,800", enterprise: "$8,500<span style='font-size: 1rem; font-weight: 500;'>/mo</span>" },
-  INR: { starter: "₹1,85,000", growth: "₹3,50,000", enterprise: "₹6,50,000<span style='font-size: 1rem; font-weight: 500;'>/mo</span>" },
-  EUR: { starter: "€2,300", growth: "€4,400", enterprise: "€7,800<span style='font-size: 1rem; font-weight: 500;'>/mo</span>" },
-  GBP: { starter: "£1,950", growth: "£3,800", enterprise: "£6,800<span style='font-size: 1rem; font-weight: 500;'>/mo</span>" }
+  USD: { starter: "From $2,500", growth: "From $4,800", enterprise: "From $8,500<span style='font-size: 0.9rem; font-weight: 500;'>/mo</span>" },
+  INR: { starter: "From ₹1.99L", growth: "From ₹3.99L", enterprise: "From ₹7L<span style='font-size: 0.9rem; font-weight: 500;'>/mo</span>" },
+  EUR: { starter: "From €2,300", growth: "From €4,400", enterprise: "From €7,800<span style='font-size: 0.9rem; font-weight: 500;'>/mo</span>" },
+  GBP: { starter: "From £1,950", growth: "From £3,800", enterprise: "From £6,800<span style='font-size: 0.9rem; font-weight: 500;'>/mo</span>" }
 };
 
 function updatePackagePricingCards(currCode) {
@@ -437,6 +437,64 @@ function closeModalOnOverlay(e) {
   if (e.target.id === "project-modal") {
     closeProjectModal();
   }
+}
+
+// Free Store Audit Diagnostic Modal Functions
+function openStoreAuditModal() {
+  const modal = document.getElementById("audit-modal");
+  if (modal) {
+    modal.classList.add("active");
+    document.body.style.overflow = "hidden";
+
+    // Reset views
+    document.getElementById("audit-step-input").style.display = "block";
+    document.getElementById("audit-step-results").style.display = "none";
+    document.getElementById("audit-loading").style.display = "block";
+    document.getElementById("audit-report-body").style.display = "none";
+  }
+}
+
+function closeStoreAuditModal() {
+  const modal = document.getElementById("audit-modal");
+  if (modal) {
+    modal.classList.remove("active");
+    document.body.style.overflow = "auto";
+  }
+}
+
+function handleStoreAuditSubmit(e) {
+  e.preventDefault();
+  const url = document.getElementById("audit-url").value;
+  const email = document.getElementById("audit-email").value;
+
+  // 1. Dispatch lead to FormSubmit AJAX
+  fetch("https://formsubmit.co/ajax/chandchv@gmail.com", {
+    method: "POST",
+    headers: { "Content-Type": "application/json", "Accept": "application/json" },
+    body: JSON.stringify({
+      _subject: `⚡ Free Shopify Diagnostic Audit Request: ${url} (${email})`,
+      "Store URL": url,
+      "Work Email": email,
+      "Audit Date": new Date().toISOString()
+    })
+  }).catch(err => console.log("Audit lead dispatch error:", err));
+
+  // 2. Switch UI view from input to animated results
+  document.getElementById("audit-step-input").style.display = "none";
+  document.getElementById("audit-step-results").style.display = "block";
+
+  // Configure WhatsApp link
+  const waBtn = document.getElementById("audit-wa-btn");
+  if (waBtn) {
+    const msg = `Hi Chandrasekhar, I just ran a free store diagnostic audit for ${url} and got a score of 61/100. I'd like to book a 20-min consultation call to review the fixes.`;
+    waBtn.href = `https://wa.me/917013891760?text=${encodeURIComponent(msg)}`;
+  }
+
+  // 3. Simulate real-time diagnostic progress
+  setTimeout(() => {
+    document.getElementById("audit-loading").style.display = "none";
+    document.getElementById("audit-report-body").style.display = "block";
+  }, 1400);
 }
 
 // Lead Magnet Modal Functions
