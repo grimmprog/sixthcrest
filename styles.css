@@ -1570,6 +1570,11 @@ textarea.form-control {
   .lead-magnet-card { flex-direction: column; text-align: center; }
 }
 
+/* Mobile Hamburger Button Base */
+.mobile-menu-btn {
+  display: none;
+}
+
 /* --- Responsive Media Queries --- */
 @media (max-width: 992px) {
   .hero-title { font-size: 2.75rem; }
@@ -1608,19 +1613,42 @@ textarea.form-control {
     border-color: var(--border-color);
   }
 
+  /* Vibrant Burger Menu Button on Mobile & Tablets */
   .mobile-menu-btn {
     display: inline-flex !important;
     align-items: center;
     justify-content: center;
-    width: 42px;
-    height: 42px;
-    background: var(--bg-glass);
-    border: 1px solid var(--border-color);
+    width: 44px;
+    height: 44px;
+    background: var(--accent-primary);
+    border: 1px solid var(--accent-primary);
     border-radius: var(--radius-md);
-    color: var(--text-main);
-    font-size: 1.2rem;
+    color: #ffffff !important;
+    font-size: 1.25rem;
     cursor: pointer;
+    box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
     transition: var(--transition);
+    z-index: 1001;
+  }
+
+  .mobile-menu-btn:hover {
+    transform: scale(1.05);
+  }
+
+  /* Hide Header WhatsApp Button on Mobile Layouts */
+  .nav-actions .btn-whatsapp {
+    display: none !important;
+  }
+
+  /* Sticky Floating WhatsApp Button at Screen Bottom */
+  .floating-whatsapp-btn {
+    position: fixed !important;
+    bottom: 1.5rem !important;
+    right: 1.25rem !important;
+    z-index: 9999 !important;
+    width: 60px !important;
+    height: 60px !important;
+    font-size: 2rem !important;
   }
 }
 

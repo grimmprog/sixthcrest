@@ -152,7 +152,47 @@ document.addEventListener("DOMContentLoaded", () => {
   initPortfolioFilter();
   calculateEstimate();
   initHeaderScroll();
+  initMobileMenu();
 });
+
+// Mobile Hamburger Menu Drawer Handler
+function initMobileMenu() {
+  const menuBtn = document.getElementById("mobile-menu-btn");
+  const navLinks = document.getElementById("nav-links");
+
+  if (menuBtn && navLinks) {
+    menuBtn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      navLinks.classList.toggle("active");
+      const icon = menuBtn.querySelector("i");
+      if (icon) {
+        if (navLinks.classList.contains("active")) {
+          icon.className = "fa-solid fa-xmark";
+        } else {
+          icon.className = "fa-solid fa-bars";
+        }
+      }
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener("click", (e) => {
+      if (!menuBtn.contains(e.target) && !navLinks.contains(e.target)) {
+        navLinks.classList.remove("active");
+        const icon = menuBtn.querySelector("i");
+        if (icon) icon.className = "fa-solid fa-bars";
+      }
+    });
+
+    // Close menu when clicking any nav link inside drawer
+    navLinks.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => {
+        navLinks.classList.remove("active");
+        const icon = menuBtn.querySelector("i");
+        if (icon) icon.className = "fa-solid fa-bars";
+      });
+    });
+  }
+}
 
 
 // Helper to read current pricing config from localStorage or default
