@@ -4,15 +4,16 @@
    ========================================================================== */
 
 // --- Default Regional Pricing Configuration ---
-const defaultPricingConfig = {
+var defaultPricingConfig = window.defaultPricingConfig || {
   USD: { symbol: "$", code: "USD", shopify: 2500, webapp: 3800, seo: 1200, ads: 1500, rate: 1.0 },
   INR: { symbol: "₹", code: "INR", shopify: 199000, webapp: 299000, seo: 95000, ads: 125000, rate: 85.0 },
   EUR: { symbol: "€", code: "EUR", shopify: 2300, webapp: 3500, seo: 1100, ads: 1400, rate: 0.92 },
   GBP: { symbol: "£", code: "GBP", shopify: 1950, webapp: 3100, seo: 950, ads: 1200, rate: 0.78 }
 };
+window.defaultPricingConfig = defaultPricingConfig;
 
 // Seed sample leads if none exist
-const initialSeedLeads = [
+var initialSeedLeads = window.initialSeedLeads || [
   {
     id: "LEAD-101",
     name: "Dr. Rajesh Sharma",
@@ -226,7 +227,7 @@ function initLeadsStorage() {
 
 
 // Budget Range Mapping per Currency
-const currencyBudgetMap = {
+var currencyBudgetMap = window.currencyBudgetMap || {
   USD: [
     { value: "$1,000 - $2,500", text: "$1,000 - $2,500" },
     { value: "$2,500 - $5,000", text: "$2,500 - $5,000", selected: true },
@@ -252,13 +253,15 @@ const currencyBudgetMap = {
     { value: "£8,000+", text: "£8,000+ Enterprise" }
   ]
 };
+window.currencyBudgetMap = currencyBudgetMap;
 
-const packagePricingMap = {
+var packagePricingMap = window.packagePricingMap || {
   USD: { starter: "From $2,500", growth: "From $4,800", enterprise: "From $8,500<span style='font-size: 0.9rem; font-weight: 500;'>/mo</span>" },
   INR: { starter: "From ₹1.99L", growth: "From ₹3.99L", enterprise: "From ₹7L<span style='font-size: 0.9rem; font-weight: 500;'>/mo</span>" },
   EUR: { starter: "From €2,300", growth: "From €4,400", enterprise: "From €7,800<span style='font-size: 0.9rem; font-weight: 500;'>/mo</span>" },
   GBP: { starter: "From £1,950", growth: "From £3,800", enterprise: "From £6,800<span style='font-size: 0.9rem; font-weight: 500;'>/mo</span>" }
 };
+window.packagePricingMap = packagePricingMap;
 
 function updatePackagePricingCards(currCode) {
   const pkgs = packagePricingMap[currCode] || packagePricingMap.USD;
