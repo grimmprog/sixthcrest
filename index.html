@@ -86,13 +86,13 @@
       </a>
 
       <ul class="nav-links" id="nav-links">
-        <li><a href="#services">Services</a></li>
-        <li><a href="#portfolio">Portfolio</a></li>
-        <li><a href="#estimator">Cost Estimator</a></li>
-        <li><a href="articles.html">Articles & Insights</a></li>
-        <li><a href="#about">Why Us</a></li>
-        <li><a href="#contact">Contact</a></li>
-        <li><a href="admin.html" target="_blank" class="admin-nav-link"><i class="fa-solid fa-lock"></i> Admin</a></li>
+        <li><a href="#services" class="nav-link-btn"><i class="fa-solid fa-layer-group"></i> Services</a></li>
+        <li><a href="#portfolio" class="nav-link-btn"><i class="fa-solid fa-briefcase"></i> Portfolio</a></li>
+        <li><a href="#estimator" class="nav-link-btn"><i class="fa-solid fa-calculator"></i> Estimator</a></li>
+        <li><a href="articles.html" class="nav-link-btn"><i class="fa-solid fa-newspaper"></i> Articles</a></li>
+        <li><a href="#about" class="nav-link-btn"><i class="fa-solid fa-shield-halved"></i> Why Us</a></li>
+        <li><a href="#contact" class="nav-link-btn"><i class="fa-solid fa-envelope"></i> Contact</a></li>
+        <li><a href="admin.html" target="_blank" class="nav-link-btn admin-nav-link"><i class="fa-solid fa-lock"></i> Admin</a></li>
       </ul>
 
       <div class="nav-actions">
@@ -110,12 +110,12 @@
           <i class="fa-solid fa-moon" id="theme-icon"></i>
         </button>
 
-        <a href="#contact" class="btn btn-primary">
-          <i class="fa-solid fa-paper-plane"></i>
-          <span>Get Free Audit</span>
+        <a href="https://wa.me/917013891760?text=Hi%20SixthCrest%2C%20I%20want%20to%20discuss%20a%20project%20for%20my%20brand" target="_blank" rel="noopener" class="btn-whatsapp">
+          <i class="fa-brands fa-whatsapp"></i>
+          <span>WhatsApp Us</span>
         </a>
 
-        <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Open Navigation Menu">
+        <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle Mobile Menu">
           <i class="fa-solid fa-bars"></i>
         </button>
       </div>
@@ -143,6 +143,10 @@
         </p>
 
         <div class="hero-cta-group">
+          <a href="https://wa.me/917013891760?text=Hi%20SixthCrest%2C%20I%20want%20to%20discuss%20a%20project%20for%20my%20brand" target="_blank" rel="noopener" class="btn-whatsapp btn-lg">
+            <i class="fa-brands fa-whatsapp"></i>
+            <span>Chat on WhatsApp (+91 7013891760)</span>
+          </a>
           <a href="#estimator" class="btn btn-primary btn-lg">
             <i class="fa-solid fa-calculator"></i>
             <span>Calculate Project Estimate</span>
@@ -752,11 +756,17 @@
               </li>
             </ul>
 
-            <div>
-              <p style="font-size: 0.85rem; color: var(--text-muted);">Direct Contact Info:</p>
-              <h4 style="font-size: 1.1rem; color: var(--text-main); margin-top: 0.25rem;">
+            <div style="margin-top: 1.5rem;">
+              <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.5rem;">Direct Agency Contact Info:</p>
+              <h4 style="font-size: 1.05rem; color: var(--text-main); margin-bottom: 0.4rem;">
                 <i class="fa-solid fa-envelope text-gradient"></i> hello@sixthcrest.com
               </h4>
+              <h4 style="font-size: 1.05rem; color: var(--text-main); margin-bottom: 1.25rem;">
+                <i class="fa-brands fa-whatsapp" style="color: #25D366;"></i> +91 7013891760
+              </h4>
+              <a href="https://wa.me/917013891760?text=Hi%20SixthCrest%2C%20I%20want%20to%20discuss%20a%20project%20for%20my%20brand" target="_blank" rel="noopener" class="btn-whatsapp" style="width: 100%; justify-content: center;">
+                <i class="fa-brands fa-whatsapp"></i> Chat Direct on WhatsApp
+              </a>
             </div>
           </div>
 
@@ -901,6 +911,41 @@
       </div>
     </div>
   </footer>
+
+  <!-- QUOTE SUBMISSION SUCCESS MODAL -->
+  <div class="modal-overlay" id="quote-success-modal">
+    <div class="modal-container" style="max-width: 520px; padding: 2.5rem; text-align: center;">
+      <button class="modal-close-btn" onclick="closeQuoteSuccessModal()" aria-label="Close Modal">&times;</button>
+      
+      <div style="width: 70px; height: 70px; background: rgba(37, 211, 102, 0.15); border: 2px solid #25D366; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; color: #25D366; font-size: 2rem;">
+        <i class="fa-solid fa-check"></i>
+      </div>
+
+      <h2 style="font-size: 1.75rem; margin-bottom: 0.75rem; color: var(--text-main);">Quote Request Submitted!</h2>
+      <p style="font-size: 0.95rem; color: var(--text-muted); margin-bottom: 1.5rem;">
+        Your inquiry details have been dispatched to <strong>chandchv@gmail.com</strong>.
+      </p>
+
+      <div id="modal-lead-details" style="background: var(--bg-glass); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 1.25rem; text-align: left; font-size: 0.9rem; margin-bottom: 1.75rem; color: var(--text-muted);">
+        <!-- Filled dynamically by JavaScript -->
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 0.85rem;">
+        <a id="modal-wa-btn" href="#" target="_blank" rel="noopener" class="btn-whatsapp" style="width: 100%; justify-content: center; font-size: 1rem; padding: 0.85rem;">
+          <i class="fa-brands fa-whatsapp" style="font-size: 1.25rem;"></i>
+          <span>Connect Direct on WhatsApp</span>
+        </a>
+        <button class="btn btn-secondary" onclick="closeQuoteSuccessModal()" style="width: 100%;">
+          Close Window
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Floating WhatsApp Quick-Action Button -->
+  <a href="https://wa.me/917013891760?text=Hi%20SixthCrest%2C%20I%20want%20to%20discuss%20a%20project%20for%20my%20brand" target="_blank" rel="noopener" class="floating-whatsapp-btn" title="Chat on WhatsApp (+91 7013891760)" aria-label="Chat on WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
 
   <script src="script.js"></script>
 </body>

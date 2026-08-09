@@ -482,7 +482,7 @@ function preselectService(serviceKey) {
 }
 
 
-// --- 7. Form Submission & Lead Storage Handler ---
+// --- 7. Form Submission & Dual Email + WhatsApp Dispatch Handler ---
 function handleFormSubmit(e) {
   e.preventDefault();
 
@@ -491,7 +491,7 @@ function handleFormSubmit(e) {
   const domain = document.getElementById("client-domain").value || "N/A";
   const service = document.getElementById("client-service").value;
   const budget = document.getElementById("client-budget").value;
-  const message = document.getElementById("client-message").value;
+  const message = document.getElementById("client-message").value || "No additional notes provided.";
   const estimatedPrice = document.getElementById("estimate-price-display").innerText;
 
   const newLead = {
@@ -508,14 +508,87 @@ function handleFormSubmit(e) {
     createdAt: new Date().toISOString()
   };
 
-  // Save to localStorage
+  // 1. Save to Local Storage for Admin Management Portal
   const existingLeads = JSON.parse(localStorage.getItem("sixthcrest_leads") || "[]");
   existingLeads.unshift(newLead);
   localStorage.setItem("sixthcrest_leads", JSON.stringify(existingLeads));
 
-  alert(`Thank you, ${name}!\n\nYour project inquiry for ${service.toUpperCase()} (Budget: ${budget}) has been submitted.\n\nYour inquiry ID is ${newLead.id}. The SixthCrest team will review your project and email you at ${email} within 24 hours.`);
+  // 2. Dispatch Email Notification to chandchv@gmail.com via FormSubmit AJAX API
+  fetch("https://formsubmit.co/ajax/chandchv@gmail.com", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      "Accept": "application/json"
+    },
+    body: JSON.stringify({
+      _subject: `🚀 New Project Quote Request: ${name} (${service.toUpperCase()})`,
+      _replyto: email,
+      "Inquiry ID": newLead.id,
+      "Client Name": name,
+      "Client Email": email,
+      "Domain / Brand": domain,
+      "Requested Service": service.toUpperCase(),
+      "Selected Budget": budget,
+      "Currency": currentCurrency,
+      "Estimated Price": estimatedPrice,
+      "Project Details": message,
+      "_template": "table"
+    })
+  }).then(res => res.json())
+    .then(data => console.log("Email dispatch status:", data))
+    .catch(err => console.error("Email dispatch failed:", err));
+
+  // 3. Format WhatsApp Message for +91 7013891760
+  const waMessageText = 
+    `🚀 *New Quote Request on SixthCrest!*\n\n` +
+    `📌 *Inquiry ID:* ${newLead.id}\n` +
+    `👤 *Name:* ${name}\n` +
+    `📧 *Email:* ${email}\n` +
+    `🌐 *Brand/Domain:* ${domain}\n` +
+    `🛠️ *Service:* ${service.toUpperCase()}\n` +
+    `💵 *Budget:* ${budget}\n` +
+    `💰 *Estimated Price:* ${estimatedPrice}\n` +
+    `💬 *Notes:* ${message}`;
+
+  const waUrl = `https://wa.me/917013891760?text=${encodeURIComponent(waMessageText)}`;
+
+  // 4. Show Success Modal & Direct WhatsApp Link
+  showQuoteSuccessModal(newLead, waUrl);
 
   e.target.reset();
+}
+
+// Success Modal Display Function
+function showQuoteSuccessModal(lead, waUrl) {
+  const modal = document.getElementById("quote-success-modal");
+  const waBtn = document.getElementById("modal-wa-btn");
+  const modalDetails = document.getElementById("modal-lead-details");
+
+  if (modal && waBtn && modalDetails) {
+    waBtn.href = waUrl;
+    modalDetails.innerHTML = `
+      <p style="margin-bottom: 0.5rem;"><strong>Inquiry ID:</strong> <span style="color: var(--accent-primary);">${lead.id}</span></p>
+      <p style="margin-bottom: 0.5rem;"><strong>Client:</strong> ${lead.name} (${lead.email})</p>
+      <p style="margin-bottom: 0.5rem;"><strong>Service:</strong> ${lead.service.toUpperCase()}</p>
+      <p style="margin-bottom: 0.5rem;"><strong>Budget / Estimate:</strong> ${lead.budget} (${lead.estimatedPrice})</p>
+    `;
+    modal.classList.add("active");
+
+    // Automatically open WhatsApp in a new tab for seamless user experience
+    setTimeout(() => {
+      window.open(waUrl, "_blank");
+    }, 600);
+  } else {
+    alert(`Thank you, ${lead.name}!\n\nYour quote request (ID: ${lead.id}) has been emailed to chandchv@gmail.com.\n\nClick OK to open WhatsApp and connect directly with our lead engineer.`);
+    window.open(waUrl, "_blank");
+  }
+}
+
+function closeQuoteSuccessModal() {
+  const modal = document.getElementById("quote-success-modal");
+  if (modal) {
+    modal.classList.remove("active");
+  }
 }
 
 
@@ -538,19 +611,34 @@ function initHeaderScroll() {
   const navLinks = document.getElementById("nav-links");
 
   if (mobileBtn && navLinks) {
-    mobileBtn.addEventListener("click", () => {
-      if (navLinks.style.display === "flex") {
-        navLinks.style.display = "none";
-      } else {
-        navLinks.style.display = "flex";
-        navLinks.style.flexDirection = "column";
-        navLinks.style.position = "absolute";
-        navLinks.style.top = "100%";
-        navLinks.style.left = "0";
-        navLinks.style.right = "0";
-        navLinks.style.background = "var(--bg-main)";
-        navLinks.style.padding = "2rem";
-        navLinks.style.borderBottom = "1px solid var(--border-color)";
+    mobileBtn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      navLinks.classList.toggle("active");
+      const icon = mobileBtn.querySelector("i");
+      if (icon) {
+        if (navLinks.classList.contains("active")) {
+          icon.className = "fa-solid fa-xmark";
+        } else {
+          icon.className = "fa-solid fa-bars";
+        }
+      }
+    });
+
+    // Close mobile menu when clicking any navigation button link
+    navLinks.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", () => {
+        navLinks.classList.remove("active");
+        const icon = mobileBtn.querySelector("i");
+        if (icon) icon.className = "fa-solid fa-bars";
+      });
+    });
+
+    // Close when clicking outside
+    document.addEventListener("click", (e) => {
+      if (!navLinks.contains(e.target) && !mobileBtn.contains(e.target)) {
+        navLinks.classList.remove("active");
+        const icon = mobileBtn.querySelector("i");
+        if (icon) icon.className = "fa-solid fa-bars";
       }
     });
   }
