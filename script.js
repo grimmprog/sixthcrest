@@ -156,14 +156,14 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // Mobile Hamburger Menu Drawer Handler
-function initMobileMenu() {
-  const menuBtn = document.getElementById("mobile-menu-btn");
+function toggleMobileMenu(e) {
+  if (e) e.stopPropagation();
   const navLinks = document.getElementById("nav-links");
+  const menuBtn = document.getElementById("mobile-menu-btn");
 
-  if (menuBtn && navLinks) {
-    menuBtn.addEventListener("click", (e) => {
-      e.stopPropagation();
-      navLinks.classList.toggle("active");
+  if (navLinks) {
+    navLinks.classList.toggle("active");
+    if (menuBtn) {
       const icon = menuBtn.querySelector("i");
       if (icon) {
         if (navLinks.classList.contains("active")) {
@@ -172,23 +172,36 @@ function initMobileMenu() {
           icon.className = "fa-solid fa-bars";
         }
       }
-    });
+    }
+  }
+}
 
-    // Close menu when clicking outside
-    document.addEventListener("click", (e) => {
-      if (!menuBtn.contains(e.target) && !navLinks.contains(e.target)) {
-        navLinks.classList.remove("active");
-        const icon = menuBtn.querySelector("i");
-        if (icon) icon.className = "fa-solid fa-bars";
-      }
-    });
+function initMobileMenu() {
+  const menuBtn = document.getElementById("mobile-menu-btn");
+  const navLinks = document.getElementById("nav-links");
 
-    // Close menu when clicking any nav link inside drawer
+  if (menuBtn) {
+    menuBtn.onclick = (e) => toggleMobileMenu(e);
+  }
+
+  // Close menu when clicking outside
+  document.addEventListener("click", (e) => {
+    if (navLinks && menuBtn && !menuBtn.contains(e.target) && !navLinks.contains(e.target)) {
+      navLinks.classList.remove("active");
+      const icon = menuBtn.querySelector("i");
+      if (icon) icon.className = "fa-solid fa-bars";
+    }
+  });
+
+  // Close menu when clicking any nav link inside drawer
+  if (navLinks) {
     navLinks.querySelectorAll("a").forEach((link) => {
       link.addEventListener("click", () => {
         navLinks.classList.remove("active");
-        const icon = menuBtn.querySelector("i");
-        if (icon) icon.className = "fa-solid fa-bars";
+        if (menuBtn) {
+          const icon = menuBtn.querySelector("i");
+          if (icon) icon.className = "fa-solid fa-bars";
+        }
       });
     });
   }
