@@ -373,21 +373,28 @@ function updateThemeIcon(theme) {
 }
 
 
-// --- 3. Portfolio Filtering ---
+// --- 3. Portfolio & Category Filtering ---
 function initPortfolioFilter() {
-  const filterBtns = document.querySelectorAll(".filter-btn");
-  const projectCards = document.querySelectorAll(".project-card");
+  const filterBtns = document.querySelectorAll(".portfolio-filter-bar .filter-btn");
+  if (!filterBtns.length) return;
 
   filterBtns.forEach(btn => {
+    const filterValue = btn.getAttribute("data-filter");
+    if (!filterValue) return;
+
     btn.addEventListener("click", () => {
-      filterBtns.forEach(b => b.classList.remove("active"));
+      const parentBar = btn.closest(".portfolio-filter-bar");
+      if (parentBar) {
+        parentBar.querySelectorAll(".filter-btn").forEach(b => b.classList.remove("active"));
+      }
       btn.classList.add("active");
 
-      const filterValue = btn.getAttribute("data-filter");
+      const section = btn.closest(".section") || document;
+      const cards = section.querySelectorAll(".project-card, .article-item");
 
-      projectCards.forEach(card => {
-        const category = card.getAttribute("data-category");
-        if (filterValue === "all" || category === filterValue) {
+      cards.forEach(card => {
+        const category = card.getAttribute("data-category") || "";
+        if (filterValue === "all" || category.includes(filterValue)) {
           card.style.display = "flex";
         } else {
           card.style.display = "none";

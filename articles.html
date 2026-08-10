@@ -311,12 +311,12 @@
 
         <!-- CATEGORY FILTER BUTTONS -->
         <div class="portfolio-filter-bar">
-          <button class="filter-btn active" onclick="filterCategory('all', this)">All Guides</button>
-          <button class="filter-btn" onclick="filterCategory('hosting', this)">Web Hosting</button>
-          <button class="filter-btn" onclick="filterCategory('agentic', this)">Agentic Commerce</button>
-          <button class="filter-btn" onclick="filterCategory('shopify', this)">Shopify Extensions</button>
-          <button class="filter-btn" onclick="filterCategory('payments', this)">Payment Gateways</button>
-          <button class="filter-btn" onclick="filterCategory('seo', this)">SEO & Speed</button>
+          <button class="filter-btn active" data-filter="all" onclick="filterCategory('all', this)">All Guides</button>
+          <button class="filter-btn" data-filter="hosting" onclick="filterCategory('hosting', this)">Web Hosting</button>
+          <button class="filter-btn" data-filter="agentic" onclick="filterCategory('agentic', this)">Agentic Commerce</button>
+          <button class="filter-btn" data-filter="shopify" onclick="filterCategory('shopify', this)">Shopify Extensions</button>
+          <button class="filter-btn" data-filter="payments" onclick="filterCategory('payments', this)">Payment Gateways</button>
+          <button class="filter-btn" data-filter="seo" onclick="filterCategory('seo', this)">SEO & Speed</button>
         </div>
 
 
@@ -632,12 +632,14 @@
   <script src="script.js"></script>
   <script>
     function filterCategory(cat, btn) {
-      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      if (!btn) return;
+      document.querySelectorAll('.portfolio-filter-bar .filter-btn').forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
 
       const items = document.querySelectorAll('.article-item');
       items.forEach(item => {
-        if (cat === 'all' || item.getAttribute('data-category') === cat) {
+        const category = item.getAttribute('data-category') || '';
+        if (cat === 'all' || category.includes(cat)) {
           item.style.display = 'flex';
         } else {
           item.style.display = 'none';
