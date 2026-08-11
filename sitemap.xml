@@ -54,4 +54,10 @@
     <changefreq>monthly</changefreq>
     <priority>0.90</priority>
   </url>
+  <url>
+    <loc>https://sixthcrest.com/2026/08/11/linux-server-ssl-expiry-apdex-monitoring/</loc>
+    <lastmod>2026-08-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.95</priority>
+  </url>
 </urlset>
