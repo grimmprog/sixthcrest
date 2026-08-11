@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Case Study: Bananaz Fashion WooCommerce to Shopify Migration (+55% Sales) | SixthCrest</title>
+  <meta name="description" content="Case study detailing how SixthCrest migrated Bananaz Fashion from WooCommerce to Shopify Plus with zero downtime, multi-currency checkout, and +55% mobile sales growth.">
+  <meta name="keywords" content="WooCommerce to Shopify Migration, Shopify Migration Case Study, Bananaz Fashion, Shopify Plus Migration, E-Commerce Speed, SixthCrest">
+
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <link rel="canonical" href="https://sixthcrest.com/articles/case-study-bananaz-woocommerce-to-shopify-migration.html">
+
+  <!-- OpenGraph Meta Tags -->
+  <meta property="og:site_name" content="SixthCrest Case Studies">
+  <meta property="og:title" content="Case Study: Bananaz Fashion WooCommerce to Shopify Migration (+55% Sales)">
+  <meta property="og:description" content="How SixthCrest executed a zero-downtime WooCommerce to Shopify migration for Bananaz Fashion.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://sixthcrest.com/articles/case-study-bananaz-woocommerce-to-shopify-migration.html">
+  <meta property="og:image" content="https://sixthcrest.com/assets/bananaz.png">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Case Study: Bananaz Fashion WooCommerce to Shopify Migration">
+  <meta name="twitter:description" content="Learn how SixthCrest migrated Bananaz from WooCommerce to Shopify with zero downtime and +55% mobile sales growth.">
+  <meta name="twitter:image" content="https://sixthcrest.com/assets/bananaz.png">
+
+  <!-- JSON-LD TechArticle Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "Case Study: Bananaz Fashion WooCommerce to Shopify Migration (+55% Sales)",
+    "description": "Comprehensive case study detailing how SixthCrest executed a zero-downtime database migration from WooCommerce to Shopify for eco-luxury brand Bananaz.",
+    "image": "https://sixthcrest.com/assets/bananaz.png",
+    "author": { "@type": "Organization", "name": "SixthCrest Dev Team" },
+    "publisher": { "@type": "Organization", "name": "SixthCrest" },
+    "datePublished": "2026-08-11",
+    "mainEntityOfPage": "https://sixthcrest.com/articles/case-study-bananaz-woocommerce-to-shopify-migration.html"
+  }
+  </script>
+
+  <!-- Favicon & Touch Icons -->
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="64x64" href="../assets/favicon.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../assets/apple-touch-icon.png">
+  <link rel="shortcut icon" href="../assets/favicon.ico">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="../styles.css">
+  <script src="../script.js" defer></script>
+  <style>
+    .article-container {
+      max-width: 860px;
+      margin: 8rem auto 4rem;
+      padding: 0 1.5rem;
+    }
+
+    .article-header {
+      margin-bottom: 3rem;
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 2rem;
+    }
+
+    .article-content {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: var(--text-main);
+    }
+
+    .article-content h2 {
+      font-size: 1.8rem;
+      margin: 2.5rem 0 1rem;
+      color: var(--text-main);
+    }
+
+    .article-content h3 {
+      font-size: 1.3rem;
+      margin: 1.75rem 0 0.75rem;
+      color: var(--accent-secondary);
+    }
+
+    .article-content p {
+      margin-bottom: 1.5rem;
+      color: var(--text-muted);
+    }
+
+    .article-content ul, .article-content ol {
+      margin: 1rem 0 1.75rem 1.5rem;
+      color: var(--text-muted);
+    }
+
+    .article-content li {
+      margin-bottom: 0.6rem;
+    }
+
+    .quote-box {
+      background: rgba(16, 185, 129, 0.08);
+      border-left: 4px solid #10b981;
+      padding: 1.5rem 2rem;
+      border-radius: var(--radius-sm);
+      margin: 2rem 0;
+      font-style: italic;
+      color: var(--text-main);
+    }
+
+    .results-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+      margin: 2rem 0;
+    }
+
+    .metric-card {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--border-highlight);
+      border-radius: var(--radius-md);
+      padding: 1.5rem;
+      text-align: center;
+    }
+
+    .metric-number {
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: #10b981;
+      margin-bottom: 0.25rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="navbar" id="navbar">
+    <div class="container navbar-inner">
+      <a href="../index.html#hero" class="brand-logo">
+        <img src="../assets/logo-icon.png" alt="SixthCrest Logo Emblem" class="logo-icon-img">
+        <span>SixthCrest</span>
+      </a>
+
+      <ul class="nav-links" id="nav-links">
+        <li><a href="../index.html#services" class="nav-link-btn"><i class="fa-solid fa-layer-group"></i> Services</a></li>
+        <li><a href="../index.html#portfolio" class="nav-link-btn active"><i class="fa-solid fa-briefcase"></i> Case Studies</a></li>
+        <li><a href="../shopify-development.html" class="nav-link-btn"><i class="fa-brands fa-shopify"></i> Shopify</a></li>
+        <li><a href="../custom-saas-development.html" class="nav-link-btn"><i class="fa-solid fa-code"></i> SaaS Build</a></li>
+        <li><a href="../articles.html" class="nav-link-btn"><i class="fa-solid fa-newspaper"></i> Articles</a></li>
+        <li><a href="../index.html#contact" class="nav-link-btn"><i class="fa-solid fa-envelope"></i> Contact</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button class="theme-toggle-btn" id="theme-toggle-btn" aria-label="Toggle Dark/Light Mode">
+          <i class="fa-solid fa-moon" id="theme-icon"></i>
+        </button>
+
+        <a href="https://wa.me/917013891760?text=Hi%20SixthCrest%2C%20I%20read%20the%20Bananaz%20WooCommerce%20to%20Shopify%20migration%20case%20study" target="_blank" rel="noopener" class="btn-whatsapp">
+          <i class="fa-brands fa-whatsapp"></i>
+          <span>WhatsApp Us</span>
+        </a>
+
+        <button class="mobile-burger-trigger" id="mobile-burger-trigger" onclick="openMobileDrawer()" aria-label="Open Navigation Menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="article-container">
+    
+    <div class="article-header">
+      <div class="badge-pill">
+        <span class="pulse-dot"></span>
+        <span>Migration & E-Commerce Case Study</span>
+      </div>
+
+      <h1 style="font-size: 2.5rem; line-height: 1.2; margin-bottom: 1.25rem;" class="text-gradient">
+        Case Study: Bananaz Fashion WooCommerce to Shopify Migration (+55% Mobile Sales Growth)
+      </h1>
+
+      <div class="article-meta">
+        <span><i class="fa-solid fa-building"></i> Client: Bananaz Fashion (bananaz.in)</span>
+        <span><i class="fa-solid fa-tag"></i> WooCommerce to Shopify Migration</span>
+        <span><i class="fa-solid fa-calendar"></i> August 2026</span>
+      </div>
+    </div>
+
+    <article class="article-content">
+      <img src="../assets/bananaz.png" alt="Bananaz Eco Luxury Fashion Shopify Storefront" style="width: 100%; border-radius: var(--radius-md); margin-bottom: 2rem; border: 1px solid var(--border-color);">
+
+      <h2>1. The Client Background</h2>
+      <p>
+        <strong>Bananaz Fashion</strong> is a pioneering eco-luxury apparel brand specializing in high-end clothing and accessories crafted from 100% natural organic banana fibre. Serving eco-conscious luxury buyers in India and internationally, Bananaz requires high-resolution image galleries and smooth multi-currency checkout.
+      </p>
+
+      <h2>2. The Problem: Unscalable WooCommerce Infrastructure</h2>
+      <p>
+        Bananaz was originally launched on WooCommerce. As international traffic and catalog variations grew, their WordPress server hit major performance walls:
+      </p>
+      <ul>
+        <li><strong>Frequent Database Lockups:</strong> PHP memory limits caused database crashes during flash sale spikes.</li>
+        <li><strong>Complex Plugin Bloat:</strong> Over 35 active WordPress plugins created severe security vulnerabilities and slow 5.2s page loads.</li>
+        <li><strong>Broken International Payments:</strong> WooCommerce currency conversion plugins created checkout errors for international buyers.</li>
+      </ul>
+
+      <h2>3. SixthCrest Migration & Engineering Solution</h2>
+      <p>
+        SixthCrest engineered a complete zero-downtime migration from WooCommerce to Shopify:
+      </p>
+      <ul>
+        <li><strong>Automated Data Migration:</strong> Migrated 100% of product SKUs, customer records, and order history without losing SEO link equity or customer passwords.</li>
+        <li><strong>Bespoke Liquid Theme:</strong> Built a lightweight Shopify theme highlighting sustainable banana fibre storytelling with interactive fabric closeups.</li>
+        <li><strong>Native Shopify Markets Integration:</strong> Enabled multi-currency pricing (USD, EUR, GBP, INR) with localized checkout flows.</li>
+      </ul>
+
+      <h2>4. Results & Business Growth</h2>
+      <div class="results-grid">
+        <div class="metric-card">
+          <div class="metric-number">+55%</div>
+          <div style="font-size: 0.9rem; color: var(--text-muted);">Mobile Sales Growth</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-number">0 Min</div>
+          <div style="font-size: 0.9rem; color: var(--text-muted);">Downtime During Migration</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-number">Sub-1s</div>
+          <div style="font-size: 0.9rem; color: var(--text-muted);">Photo Gallery Load Speed</div>
+        </div>
+      </div>
+
+      <div class="quote-box">
+        "Migrating from WooCommerce to Shopify with SixthCrest was the best business decision we made. Zero downtime, zero lost data, and our mobile conversion rate jumped by 55% immediately!"
+        <div style="font-style: normal; margin-top: 0.5rem; font-weight: 700; font-size: 0.9rem;">— E-Commerce Director, Bananaz Fashion</div>
+      </div>
+
+      <!-- BOTTOM CTA BANNER CARD -->
+      <div class="cta-banner-card" style="margin-top: 3rem;">
+        <h3 style="font-size: 1.8rem; margin-bottom: 0.75rem;">Planning a WooCommerce to Shopify Migration?</h3>
+        <p style="font-size: 1rem; opacity: 0.9; margin-bottom: 1.5rem;">Let SixthCrest handle your complete catalog migration, custom theme build, and checkout optimization with zero downtime.</p>
+        <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+          <a href="https://wa.me/917013891760?text=Hi%20Chandrasekhar%2C%20I%20read%20the%20Bananaz%20migration%20case%20study%20and%20want%20to%20discuss%20migrating%20to%20Shopify" target="_blank" rel="noopener" class="btn-whatsapp">
+            <i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp (+91 7013891760)
+          </a>
+          <a href="../index.html#contact" class="btn btn-secondary">
+            <i class="fa-solid fa-paper-plane"></i> Request Free Migration Strategy Call
+          </a>
+        </div>
+      </div>
+    </article>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <p>&copy; 2026 SixthCrest. All rights reserved.</p>
+        <p><a href="../articles.html" style="color: var(--text-muted);">Back to Articles Knowledge Hub</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp Quick-Action Button -->
+  <a href="https://wa.me/917013891760?text=Hi%20SixthCrest%2C%20I%20want%20to%20discuss%20a%20project%20for%20my%20brand" target="_blank" rel="noopener" class="floating-whatsapp-btn" title="Chat on WhatsApp (+91 7013891760)" aria-label="Chat on WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
+  <!-- REBUILT MOBILE NAVIGATION DRAWER & OVERLAY -->
+  <div id="mobile-drawer-overlay" class="mobile-drawer-overlay" onclick="closeMobileDrawer()"></div>
+  <aside id="mobile-drawer-menu" class="mobile-drawer-menu" aria-label="Mobile Navigation">
+    <div class="mobile-drawer-header">
+      <div class="brand-logo" style="flex-direction: row; align-items: center; gap: 0.6rem;">
+        <img src="../assets/logo-icon.png" alt="SixthCrest Logo" style="width: 32px; height: 32px;">
+        <span style="font-size: 0.85rem; font-weight: 800; letter-spacing: 0.12em;">SIXTHCREST</span>
+      </div>
+      <button id="mobile-drawer-close" class="mobile-drawer-close-btn" onclick="closeMobileDrawer()" aria-label="Close Menu">&times;</button>
+    </div>
+    <nav class="mobile-drawer-nav">
+      <a href="../index.html#services" class="mobile-nav-item"><i class="fa-solid fa-layer-group"></i> Services</a>
+      <a href="../index.html#portfolio" class="mobile-nav-item"><i class="fa-solid fa-briefcase"></i> Case Studies</a>
+      <a href="../index.html#estimator" class="mobile-nav-item"><i class="fa-solid fa-calculator"></i> Estimator</a>
+      <a href="../shopify-development.html" class="mobile-nav-item"><i class="fa-brands fa-shopify"></i> Shopify Growth</a>
+      <a href="../custom-saas-development.html" class="mobile-nav-item"><i class="fa-solid fa-code"></i> Custom SaaS</a>
+      <a href="../articles.html" class="mobile-nav-item"><i class="fa-solid fa-newspaper"></i> Articles & Guides</a>
+      <a href="../index.html#about" class="mobile-nav-item"><i class="fa-solid fa-shield-halved"></i> Why Us</a>
+      <a href="../index.html#contact" class="mobile-nav-item"><i class="fa-solid fa-envelope"></i> Contact Us</a>
+    </nav>
+    <div class="mobile-drawer-footer">
+      <a href="https://wa.me/917013891760?text=Hi%20SixthCrest%2C%20I%20want%20to%20discuss%20a%20project" target="_blank" rel="noopener" class="btn-whatsapp" style="width: 100%; justify-content: center; font-size: 0.95rem; padding: 0.75rem;">
+        <i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp
+      </a>
+    </div>
+  </aside>
+</body>
+</html>

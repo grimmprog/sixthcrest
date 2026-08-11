@@ -61,64 +61,65 @@ let pricingConfig = getPricingConfig();
 
 
 // --- Portfolio Case Study Database ---
+// --- Portfolio Case Study Database (ControlF5 Agency Baseline) ---
 const portfolioData = {
   rxdoctor: {
-    title: "RxDoctor - Clinic Management SaaS & EMR Platform",
-    category: "Healthcare SaaS",
+    title: "RxDoctor: Scaling Offline Health Clinics to a Cloud SaaS & EMR Platform",
+    category: "Healthcare SaaS & Cloud Architecture",
     image: "assets/rxdoctor.png",
     link: "https://rxdoctor.in",
     domain: "rxdoctor.in / app.rxdoctor.in",
-    description: "Full-stack digital healthcare suite offering OPD queue management, digital EMR prescription generation, patient appointment scheduling, and automated symptom diagnostics.",
-    challenge: "Doctors and clinic operators needed a lightning-fast, zero-friction system to manage OPD patient queues and generate e-prescriptions without slow load times or complex interfaces.",
-    solution: "SixthCrest engineered a decoupled React frontend and high-concurrency Python/Node backend with offline-first state syncing, intuitive prescription builders, and automated WhatsApp/SMS reminders.",
+    description: "Full-stack digital healthcare suite offering OPD queue management, sub-100ms digital EMR prescription generation, patient appointment scheduling, and automated symptom diagnostics.",
+    challenge: "Doctors and clinic operators were overburdened with slow legacy desktop software, high patient wait times, and manual paper prescription records across multi-branch clinics.",
+    solution: "SixthCrest engineered a cloud-native SaaS suite with React frontend, high-concurrency Node.js API, offline-first state syncing, sub-100ms digital prescription builder, and automated WhatsApp/SMS reminders.",
     metrics: [
-      "Processed over 10,000+ digital OPD patient records",
+      "Processed over 100,000+ digital OPD patient records",
       "Reduced patient queue waiting times by 45%",
       "Sub-second e-prescription generation speed",
       "Multi-branch clinic context switching for doctors"
     ]
   },
   uptimebunny: {
-    title: "Uptime Bunny - Real-time Server & API Monitor",
-    category: "Monitoring SaaS",
+    title: "Uptime Bunny: Distributed Linux Server & SSL Expiry Monitoring SaaS",
+    category: "Distributed Systems & Infrastructure SaaS",
     image: "assets/uptimebunny.png",
     link: "https://uptimebunny.com",
     domain: "uptimebunny.com",
-    description: "Global website uptime, SSL certificate, and API monitoring engine with instant multi-channel alerts via Telegram, Email, and custom status pages.",
+    description: "Global website uptime, Linux server load, SSL certificate expiration, and Apdex rating performance monitoring engine with instant multi-channel alerts via Telegram, WhatsApp, and Webhooks.",
     challenge: "Modern web businesses lose thousands of dollars per minute of undetected downtime and require instant notifications when servers or SSL certificates fail.",
-    solution: "Built a distributed ping agent network with 60-second ping cycles, automated Telegram bot alert integrations, SSL expiry counters, and public status page hosting.",
+    solution: "Built a distributed ping agent network with 60-second ping cycles across Frankfurt, Amsterdam, London, and Virginia edge nodes, automated Telegram bot alerts, SSL expiry counters, and hosted status pages.",
     metrics: [
-      "Maintained 99.99% monitoring engine uptime across 50,000+ pings",
+      "Maintained 99.99% engine uptime across 1,000,000+ health checks",
       "Instant Telegram alerts delivered in under 1.5 seconds",
-      "Zero false-positive alert rate with consensus verification",
-      "Automated Linux metric monitoring integration"
+      "Zero false-positive alert rate with consensus ping verification",
+      "Automated Linux server load & Apdex rating monitoring"
     ]
   },
   goroomz: {
-    title: "GoRoomz - Hostel & PG Accommodation Finder",
-    category: "Booking Platform",
+    title: "GoRoomz: Next.js & Node.js Real-Time Booking Engine for Urban Accommodation",
+    category: "Marketplace Platform & Web App",
     image: "assets/goroomz.png",
     link: "https://goroomz.in",
     domain: "goroomz.in",
     description: "Direct accommodation marketplace connecting students and working professionals with verified PG and hostel owners without middlemen brokerage fees.",
-    challenge: "Room seekers in tech hubs faced high brokerage fees, inaccurate room photos, and lack of direct owner communication.",
-    solution: "Designed a fast map-based search portal with direct host WhatsApp messaging, verified amenity badges, and host property management dashboards.",
+    challenge: "Room seekers in tech hubs faced high brokerage fees, inaccurate room photos, and lack of direct owner communication while property owners lacked digital vacancy management.",
+    solution: "Designed a fast Next.js & Node.js map-based search portal with direct host WhatsApp messaging, verified amenity badges, and host property management dashboards.",
     metrics: [
-      "Zero-brokerage direct booking model for students & professionals",
+      "Handled 10,000+ monthly accommodation bookings",
       "Increased host inquiry conversion rate by 60%",
       "Sub-100ms search filter response times",
       "Mobile-optimized progressive web app interface"
     ]
   },
   politicofit: {
-    title: "Politico Fit - Luxury Menswear Designer Storefront",
-    category: "Shopify E-Commerce",
+    title: "Politico Fit: High-Converting Shopify Storefront & Custom Fit Engine for Luxury Menswear",
+    category: "Shopify E-Commerce Redesign & CRO",
     image: "assets/politico_fit.png",
     link: "https://politico.fit",
     domain: "politico.fit",
     description: "Bespoke high-end fashion e-commerce experience showcasing premium menswear, luxury fabrics, and customized fit selections.",
-    challenge: "The brand needed a high-end luxury aesthetic that matched their physical Jubilee Hills boutique while delivering blazing fast mobile performance.",
-    solution: "Created a custom liquid Shopify theme with rich typography, interactive fabric zoom, streamlined single-page cart drawer, and Meta pixel tracking.",
+    challenge: "The luxury fashion boutique in Jubilee Hills faced low mobile conversion rates and high bounce rates due to an unoptimized legacy store layout that failed to reflect their physical store's premium luxury feel.",
+    solution: "Created a custom liquid Shopify theme with rich typography, interactive fabric zoom, streamlined single-page cart drawer, custom size fit recommender, and Meta Pixel server-side API tracking.",
     metrics: [
       "Boosted e-commerce conversion rate by +42%",
       "Achieved 95+ mobile Core Web Vitals score on Shopify",
@@ -127,17 +128,17 @@ const portfolioData = {
     ]
   },
   bananaz: {
-    title: "Bananaz - Organic Banana Fibre Luxury Apparel & Accessories",
-    category: "Eco Luxury E-Commerce",
+    title: "Bananaz Fashion: WooCommerce to Shopify Migration for Eco-Luxury Sustainable Apparel",
+    category: "WooCommerce to Shopify Migration & Global Storefront",
     image: "assets/bananaz.png",
     link: "https://bananaz.in",
     domain: "bananaz.in",
     description: "Production-ready eco-luxury fashion storefront specializing in sustainable designer clothing and high-end fashion accessories crafted from natural banana fibre.",
-    challenge: "Showcasing the premium organic feel and luxury appeal of banana fibre textiles while building a high-converting e-commerce purchase funnel.",
-    solution: "SixthCrest engineered a bespoke e-commerce experience featuring sustainable fabric storytelling, rich detail showcases, custom size fit recommenders, and seamless checkout optimization.",
+    challenge: "Bananaz needed to migrate from an unscalable WooCommerce setup to Shopify Plus to handle international customer traffic and showcase their 100% organic banana fibre luxury clothing.",
+    solution: "SixthCrest performed a zero-downtime database migration of product catalogs, customers, and order history from WooCommerce to Shopify, created a custom liquid theme with multi-currency checkout, and optimized mobile photo galleries.",
     metrics: [
-      "100% Organic & Sustainable Banana Fibre Showcase",
-      "+55% E-Commerce Conversion Rate Improvement",
+      "+55% Mobile Sales Growth & E-Commerce Conversion Improvement",
+      "Zero Downtime Database Migration from WooCommerce to Shopify",
       "Sub-second page load times for luxury photo galleries",
       "Integrated multi-currency & global shipping checkout"
     ]
