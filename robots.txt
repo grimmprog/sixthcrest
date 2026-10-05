@@ -2,5 +2,36 @@ User-agent: *
 Allow: /
 Disallow: /admin.html
 
-# Sitemap URL for Google & Bing Search Engines
+# Explicitly Allow AI Bots & LLM Indexers
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+# Sitemap URL for Search Engines & AI Crawlers
 Sitemap: https://sixthcrest.com/sitemap.xml
